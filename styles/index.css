@@ -1,0 +1,120 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+iframe {
+  width: 150px;
+  height: 150px;
+}
+
+.header_container__container {
+  background-color: black;
+  color: white;
+}
+
+.header_container__container .header_container__title {
+  font-size: 3rem;
+  font-family: "Poppins", sans-serif, 700;
+}
+
+.header_container__container .header_container__catch {
+  font-size: 1.25rem;
+  font-style: italic;
+}
+
+.section__main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.our-actions__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+}
+
+.our-actions__container .our-actions__card-container {
+  width: 4rem;
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.our-actions__container .our-actions__card-container:hover .our-actions__card-description {
+  left: 0;
+  opacity: 1;
+}
+
+.our-actions__container .our-actions__card-container:hover {
+  width: 500px;
+}
+
+.our-actions__container .our-actions__card-container img {
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
+  width: 400px;
+  z-index: -1;
+}
+
+.our-actions__container .our-actions__card-container .our-actions__card-title {
+  font-size: 2.5rem;
+  color: black;
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  bottom: 15px;
+  padding: 5px;
+  text-align: center;
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+  text-orientation: mixed;
+}
+
+.our-actions__container .our-actions__card-container .our-actions__card-description {
+  font-size: 1.5rem;
+  color: black;
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  bottom: 15px;
+  padding: 5px;
+  text-align: center;
+  left: 200%;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.carousel__container {
+  position: relative;
+}
+
+.carousel__container .swiper {
+  width: 100%;
+  height: 50vh;
+  position: relative;
+}
+
+.carousel__container .swiper .swiper-wrapper .swiper-slide img {
+  width: 100%;
+}
+/*# sourceMappingURL=index.css.map */
