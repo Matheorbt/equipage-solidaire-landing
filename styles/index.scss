@@ -5,6 +5,9 @@
   margin: 0;
   box-sizing: border-box;
 }
+body {
+  overflow-x: hidden;
+}
 
 // Header
 
@@ -68,6 +71,7 @@
       font-size: 2.5rem;
       a {
         text-decoration: none;
+        font-size: 1.75rem;
         color: black;
         .fa-external-link-alt {
           color: blue !important;
@@ -78,7 +82,7 @@
   .section__video_container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(6, 0.5fr);
+    grid-auto-rows: 1fr;
     row-gap: 25px;
     column-gap: 25px;
     width: 100%;
@@ -89,7 +93,6 @@
       grid-row-start: 1;
       grid-row-end: 1;
       width: 100%;
-      border: purple 10px solid;
     }
     #second {
       grid-column-start: 3;
@@ -97,35 +100,31 @@
       grid-row-start: 2;
       grid-row-end: 2;
       width: 100%;
-      border: blue 10px solid;
     }
     #third {
       grid-column-start: 1;
       grid-column-end: 3;
       grid-row: 2 / 3;
       width: 100%;
-      border: red 10px solid;
     }
     #fourth {
       grid-column-start: 1;
       grid-column-end: 5;
-      grid-row-start: 4;
-      grid-row-end: 4;
-      width: 100%;
-      border: yellow 10px solid;
-    }
-    #fifth {
-      grid-column-start: 3;
-      grid-column-end: 5;
       grid-row-start: 3;
       grid-row-end: 3;
       width: 100%;
-      border: green 10px solid;
+    }
+    #fifth {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 4;
+      grid-row-end: 4;
+      width: 100%;
     }
   }
 }
 
-// Basic effect of card
+// Actions presentation
 
 .our-actions__container {
   display: grid;
@@ -141,6 +140,7 @@
     }
     .our-actions__card-title {
       font-size: 2.5rem;
+      padding-bottom: 10px;
       color: black;
       padding: 5px;
       text-align: center;
@@ -187,7 +187,7 @@
     position: relative;
     .swiper-button-next,
     .swiper-button-prev {
-      color: black;
+      visibility: hidden;
     }
     .swiper-wrapper {
       .swiper-slide {
@@ -196,5 +196,116 @@
         }
       }
     }
+  }
+}
+
+footer {
+  width: 100%;
+  overflow-x: visible;
+  height: fit-content;
+  margin-top: 250px;
+  background-color: rgb(80, 80, 80);
+  padding-bottom: 50px;
+  .footer-container {
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .break-line {
+      width: 1px;
+      height: 150px;
+    }
+    .link-container {
+      display: flex;
+      flex-direction: column;
+      .link-hover {
+        display: inline-block;
+        color: white;
+        &::after {
+          content: "";
+          display: block;
+          background-color: white;
+          width: 0%;
+          height: 2px;
+          transition: 0.25s all ease-in-out;
+        }
+        &:hover::after {
+          width: 60px;
+        }
+      }
+      .link-footer {
+        color: white;
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        font-size: 4ch;
+        a {
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-device-width: 1150px) {
+  .header_container__container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .section__main {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .our-actions__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .our-actions__card-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+  footer {
+    .footer-container {
+      flex-direction: column;
+      gap: 30px;
+      .break-line {
+        all: unset;
+        background-color: white;
+        width: 80%;
+        height: 1px;
+      }
+      .link-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-device-width: 650px) {
+  .header_container__container {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  .section__main {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-device-width: 350px) {
+  .header_container__container {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+  .section__main {
+    max-width: 250px;
+    margin: 0 auto;
   }
 }
