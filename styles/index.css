@@ -5,27 +5,56 @@
           box-sizing: border-box;
 }
 
-iframe {
-  width: 150px;
-  height: 150px;
-}
-
 .header_container__container {
-  background-color: black;
-  color: white;
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .header_container__container .header_container__title {
   font-size: 3rem;
-  font-family: "Poppins", sans-serif, 700;
+  font-family: "Poppins", sans-serif;
 }
 
 .header_container__container .header_container__catch {
   font-size: 1.25rem;
+  font-family: "Poppins", sans-serif;
   font-style: italic;
+  font-weight: 400;
+}
+
+.header_container__container .header_container__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+
+.header_container__container .header_container__link a {
+  color: black;
+  font-size: 1.5rem;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+
+.header_container__container .header_container__link a:hover {
+  opacity: 0.6;
 }
 
 .section__main {
+  max-width: 1100px;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -39,37 +68,127 @@ iframe {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 2vw 0vw;
+}
+
+.section__main .section__title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.section__main .section__text {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+}
+
+.section__main .section__link_tree {
+  list-style-type: none;
+}
+
+.section__main .section__link_tree .section__link_tree_link {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.section__main .section__link_tree .section__link_tree_link a {
+  text-decoration: none;
+  color: black;
+}
+
+.section__main .section__link_tree .section__link_tree_link a .fa-external-link-alt {
+  color: blue !important;
+}
+
+.section__main .section__video_container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: (0.5fr)[6];
+      grid-template-rows: repeat(6, 0.5fr);
+  row-gap: 25px;
+  -webkit-column-gap: 25px;
+          column-gap: 25px;
+  width: 100%;
+}
+
+.section__main .section__video_container #first {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 5;
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  grid-row-end: 1;
+  width: 100%;
+  border: purple 10px solid;
+}
+
+.section__main .section__video_container #second {
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+  grid-column-end: 5;
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  grid-row-end: 2;
+  width: 100%;
+  border: blue 10px solid;
+}
+
+.section__main .section__video_container #third {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 3;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 / 3;
+  width: 100%;
+  border: red 10px solid;
+}
+
+.section__main .section__video_container #fourth {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 5;
+  -ms-grid-row: 4;
+      grid-row-start: 4;
+  grid-row-end: 4;
+  width: 100%;
+  border: yellow 10px solid;
+}
+
+.section__main .section__video_container #fifth {
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+  grid-column-end: 5;
+  -ms-grid-row: 3;
+      grid-row-start: 3;
+  grid-row-end: 3;
+  width: 100%;
+  border: green 10px solid;
 }
 
 .our-actions__container {
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+}
+
+.our-actions__container .our-actions__card-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  width: 100%;
-}
-
-.our-actions__container .our-actions__card-container {
-  width: 4rem;
-  overflow: hidden;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-}
-
-.our-actions__container .our-actions__card-container:hover .our-actions__card-description {
-  left: 0;
-  opacity: 1;
-}
-
-.our-actions__container .our-actions__card-container:hover {
-  width: 500px;
 }
 
 .our-actions__container .our-actions__card-container img {
-  -webkit-filter: blur(2px);
-          filter: blur(2px);
   width: 400px;
   z-index: -1;
 }
@@ -77,31 +196,44 @@ iframe {
 .our-actions__container .our-actions__card-container .our-actions__card-title {
   font-size: 2.5rem;
   color: black;
-  position: absolute;
-  left: 5px;
-  right: 5px;
-  bottom: 15px;
   padding: 5px;
   text-align: center;
-  -webkit-writing-mode: vertical-lr;
-      -ms-writing-mode: tb-lr;
-          writing-mode: vertical-lr;
-  text-orientation: mixed;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.our-actions__container .our-actions__card-container .our-actions__card-title:after {
+  position: absolute;
+  content: "";
+  height: 4px;
+  width: 30%;
+  top: 80%;
+  left: 0;
+  background-color: red;
 }
 
 .our-actions__container .our-actions__card-container .our-actions__card-description {
   font-size: 1.5rem;
   color: black;
-  position: absolute;
-  left: 5px;
-  right: 5px;
-  bottom: 15px;
   padding: 5px;
   text-align: center;
-  left: 200%;
-  opacity: 0;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+  font-family: "Poppins", sans-serif;
+}
+
+.our-actions__container .our-actions__card-container .our-actions__card-description a {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: black;
+}
+
+.our-actions__container .our-actions__card-container .our-actions__card-description a .fa-external-link-alt {
+  color: blue !important;
 }
 
 .carousel__container {
@@ -112,6 +244,11 @@ iframe {
   width: 100%;
   height: 50vh;
   position: relative;
+}
+
+.carousel__container .swiper .swiper-button-next,
+.carousel__container .swiper .swiper-button-prev {
+  color: black;
 }
 
 .carousel__container .swiper .swiper-wrapper .swiper-slide img {

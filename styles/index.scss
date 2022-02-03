@@ -6,84 +6,175 @@
   box-sizing: border-box;
 }
 
-// Temp
-
-iframe {
-  width: 150px;
-  height: 150px;
-}
-
 // Header
 
 .header_container__container {
-  background-color: $primary-color;
-  color: $secondary-color;
+  color: $primary-color;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 10px;
+  max-width: 1100px;
+  margin: 0 auto;
   .header_container__title {
     font-size: 3rem;
-    font-family: $bold-font;
+    font-family: "Poppins", sans-serif;
   }
   .header_container__catch {
     font-size: 1.25rem;
+    font-family: "Poppins", sans-serif;
     font-style: italic;
+    font-weight: 400;
+  }
+  .header_container__link {
+    display: flex;
+    gap: 10px;
+    a {
+      color: black;
+      font-size: 1.5rem;
+      transition: all 0.25s ease-in-out;
+      &:hover {
+        opacity: 0.6;
+      }
+    }
   }
 }
 
 // Sections
 
 .section__main {
+  max-width: 1100px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 2vw 0vw;
+  .section__title {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+  }
+  .section__text {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 1.25rem;
+  }
+  .section__link_tree {
+    list-style-type: none;
+    .section__link_tree_link {
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
+      font-size: 2.5rem;
+      a {
+        text-decoration: none;
+        color: black;
+        .fa-external-link-alt {
+          color: blue !important;
+        }
+      }
+    }
+  }
+  .section__video_container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 0.5fr);
+    row-gap: 25px;
+    column-gap: 25px;
+    width: 100%;
+
+    #first {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 1;
+      grid-row-end: 1;
+      width: 100%;
+      border: purple 10px solid;
+    }
+    #second {
+      grid-column-start: 3;
+      grid-column-end: 5;
+      grid-row-start: 2;
+      grid-row-end: 2;
+      width: 100%;
+      border: blue 10px solid;
+    }
+    #third {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row: 2 / 3;
+      width: 100%;
+      border: red 10px solid;
+    }
+    #fourth {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 4;
+      grid-row-end: 4;
+      width: 100%;
+      border: yellow 10px solid;
+    }
+    #fifth {
+      grid-column-start: 3;
+      grid-column-end: 5;
+      grid-row-start: 3;
+      grid-row-end: 3;
+      width: 100%;
+      border: green 10px solid;
+    }
+  }
 }
 
 // Basic effect of card
 
 .our-actions__container {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
   width: 100%;
   .our-actions__card-container {
-    width: 4rem;
-    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     position: relative;
-    transition: all 0.5s ease-in-out;
-    &:hover .our-actions__card-description {
-      left: 0;
-      opacity: 1;
-    }
-    &:hover {
-      width: 500px;
-    }
     img {
-      filter: blur(2px);
       width: 400px;
       z-index: -1;
     }
     .our-actions__card-title {
       font-size: 2.5rem;
       color: black;
-      position: absolute;
-      left: 5px;
-      right: 5px;
-      bottom: 15px;
       padding: 5px;
       text-align: center;
-      writing-mode: vertical-lr;
-      text-orientation: mixed;
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
+      font-size: 2rem;
+      position: relative;
+      width: fit-content;
+      &:after {
+        position: absolute;
+        content: "";
+        height: 4px;
+        width: 30%;
+        top: 80%;
+        left: 0;
+        background-color: red;
+      }
     }
     .our-actions__card-description {
       font-size: 1.5rem;
       color: black;
-      position: absolute;
-      left: 5px;
-      right: 5px;
-      bottom: 15px;
       padding: 5px;
       text-align: center;
-      left: 200%;
-      opacity: 0;
-      transition: all 0.5s ease-in-out;
+      font-family: "Poppins", sans-serif;
+      a {
+        text-decoration: none;
+
+        font-weight: 700;
+        font-size: 2.5rem;
+        color: black;
+        .fa-external-link-alt {
+          color: blue !important;
+        }
+      }
     }
   }
 }
@@ -94,6 +185,10 @@ iframe {
     width: 100%;
     height: 50vh;
     position: relative;
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: black;
+    }
     .swiper-wrapper {
       .swiper-slide {
         img {
