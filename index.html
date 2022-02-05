@@ -35,74 +35,100 @@
     <title>Equipage Solidaire</title>
   </head>
   <body>
-    <header class="header_container__container">
-      <div>
-        <h1 class="header_container__title">L'équipage solidaire</h1>
-        <h3 class="header_container__catch">
-          Agir à notre échelle, c’est déjà agir à grande échelle
-        </h3>
-      </div>
-      <div class="header_container__link">
-        <a href="https://www.facebook.com/Equipagesolidaire/" target="_blank"
-          ><i class="fab fa-facebook"></i
-        ></a>
-        <a
-          href="https://www.instagram.com/equipagesolidaire/?hl=fr"
-          target="_blank"
-          ><i class="fab fa-instagram"></i
-        ></a>
-        <a href="https://twitter.com/EquipageSolidR" target="_blank"
-          ><i class="fab fa-twitter"></i
-        ></a>
-      </div>
-    </header>
-    <div class="carousel__container">
-      <div class="swiper">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-          <!-- Slides -->
-          <div class="swiper-slide">
-            <img
-              src="./images/equipage_solidaire__1.JPG"
-              alt="charity actions"
-            />
-          </div>
-          <div class="swiper-slide">
-            <img
-              src="./images/equipage_solidaire__2.JPG"
-              alt="charity actions"
-            />
-          </div>
-          <div class="swiper-slide">
-            <img
-              src="./images/equipage_solidaire__3.JPG"
-              alt="charity actions"
-            />
-          </div>
-          <div class="swiper-slide">
-            <img
-              src="./images/equipage_solidaire__4.JPG"
-              alt="charity actions"
-            />
-          </div>
-          <div class="swiper-slide">
-            <img
-              src="./images/equipage_solidaire__5.JPG"
-              alt="charity actions"
-            />
-          </div>
-          <div class="swiper-slide">
-            <img
-              src="./images/equipage_solidaire__6.JPG"
-              alt="charity actions"
-            />
+    <div class="hero_container">
+      <img src="./images/bag_landing.png" id="hero_img" />
+      <header class="header_container__container">
+        <div class="header_container__left">
+          <img src="./images/logo_equipage_solidaire_white.png" />
+          <div>
+            <h1 class="header_container__title">L'équipage solidaire</h1>
+            <h3 class="header_container__catch">
+              Agir à notre échelle, c’est déjà agir à grande échelle
+            </h3>
           </div>
         </div>
-
-        <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-      </div>
+        <div class="header_container__right">
+          <div class="header_container__link">
+            <a
+              href="https://www.facebook.com/Equipagesolidaire/"
+              target="_blank"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/equipagesolidaire/?hl=fr"
+              target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://twitter.com/EquipageSolidR" target="_blank"
+              ><i class="fab fa-twitter"></i
+            ></a>
+          </div>
+        </div>
+      </header>
+      <section>
+        <article class="landing__hero_container">
+          <h1 class="landing__hero_container_title">Nos actions</h1>
+          <p class="landing__hero_container_catch">
+            Retrouvez ici toutes nos actions en cours:
+          </p>
+          <div class="landing__hero_container_cards_container">
+            <a
+              class="landing__card_container"
+              href="https://delivraide.org/"
+              target="_blank"
+            >
+              <img
+                class="landing__card_container_img"
+                src="./images/delivraide.jpg"
+              />
+              <span class="landing__card_container_header"
+                ><h3 class="landing__card_container_title">Delivr'aide</h3>
+                <i class="fa fa-arrow-right" aria-hidden="true"></i
+              ></span>
+              <p class="landing__card_container_description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+                perferendis voluptas
+              </p>
+            </a>
+            <a
+              class="landing__card_container"
+              href="https://delivraide.org/"
+              target="_blank"
+            >
+              <img
+                class="landing__card_container_img"
+                src="./images/delivraide.jpg"
+              />
+              <span class="landing__card_container_header"
+                ><h3 class="landing__card_container_title">Discord Étudiant</h3>
+                <i class="fa fa-arrow-right" aria-hidden="true"></i
+              ></span>
+              <p class="landing__card_container_description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+                perferendis voluptas
+              </p>
+            </a>
+            <a
+              class="landing__card_container"
+              href="https://delivraide.org/"
+              target="_blank"
+            >
+              <img
+                class="landing__card_container_img"
+                src="./images/delivraide.jpg"
+              />
+              <span class="landing__card_container_header"
+                ><h3 class="landing__card_container_title">Maraudes</h3>
+                <i class="fa fa-arrow-right" aria-hidden="true"></i
+              ></span>
+              <p class="landing__card_container_description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+                perferendis voluptas
+              </p>
+            </a>
+          </div>
+        </article>
+      </section>
     </div>
     <div>
       <section class="section__main">
@@ -559,6 +585,54 @@
           ></iframe>
         </div>
       </section>
+    </div>
+    <div class="carousel__container">
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <img
+              src="./images/equipage_solidaire__1.JPG"
+              alt="charity actions"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="./images/equipage_solidaire__2.JPG"
+              alt="charity actions"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="./images/equipage_solidaire__3.JPG"
+              alt="charity actions"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="./images/equipage_solidaire__4.JPG"
+              alt="charity actions"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="./images/equipage_solidaire__5.JPG"
+              alt="charity actions"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="./images/equipage_solidaire__6.JPG"
+              alt="charity actions"
+            />
+          </div>
+        </div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
     </div>
     <footer>
       <div class="ocean">
