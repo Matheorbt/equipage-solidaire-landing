@@ -112,9 +112,12 @@ body {
 }
 
 .landing__hero_container .landing__hero_container_cards_container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -497,10 +500,10 @@ footer .ocean .wave {
 
 @media only screen and (max-device-width: 1450px) {
   .landing__hero_container_cards_container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2] !important;
+        grid-template-columns: repeat(2, 1fr) !important;
   }
   .landing__hero_container {
     position: absolute;
@@ -572,6 +575,12 @@ footer .ocean .wave {
 }
 
 @media only screen and (max-device-width: 800px) {
+  .landing__hero_container_cards_container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[1] !important;
+        grid-template-columns: repeat(1, 1fr) !important;
+  }
   .header_container__container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

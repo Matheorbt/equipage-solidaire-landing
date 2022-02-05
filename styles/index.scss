@@ -90,7 +90,9 @@ body {
     font-weight: 400;
   }
   .landing__hero_container_cards_container {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
     justify-content: space-between;
     gap: 20px;
   }
@@ -370,7 +372,8 @@ footer {
 
 @media only screen and (max-device-width: 1450px) {
   .landing__hero_container_cards_container {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) !important;
   }
   .landing__hero_container {
     position: absolute;
@@ -421,6 +424,10 @@ footer {
 }
 
 @media only screen and (max-device-width: 800px) {
+  .landing__hero_container_cards_container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
   .header_container__container {
     flex-direction: column;
     gap: 20px;
