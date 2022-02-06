@@ -111,7 +111,7 @@ body {
 .landing__hero_container {
   width: 100%;
   padding-left: 10vw;
-  gap: 20px;
+  gap: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -119,6 +119,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding-bottom: 50px;
 }
 
 .landing__hero_container * {
@@ -163,10 +164,34 @@ body {
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
   max-width: 275px;
-  background-color: white;
   color: black;
+  background-color: white;
   border-radius: 20px;
-  padding: 10px;
+}
+
+.landing__hero_container .landing__card_container a {
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+.landing__hero_container .landing__card_container a .landing__card_container_header,
+.landing__hero_container .landing__card_container a .landing__card_container_description {
+  max-width: 250px;
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
 
 .landing__hero_container .landing__card_container:hover {
@@ -199,6 +224,7 @@ body {
 
 .landing__hero_container .landing__card_container .landing__card_container_img {
   width: 100%;
+  border-radius: 20px 20px 0px 0px;
 }
 
 .section__main {
@@ -241,7 +267,7 @@ body {
 .section__main .section__title {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
-  font-size: 2.5rem;
+  font-size: 2.3rem;
 }
 
 .section__main .section__text {
@@ -558,9 +584,15 @@ footer .ocean .wave {
     -ms-grid-columns: (1fr)[2] !important;
         grid-template-columns: repeat(2, 1fr) !important;
   }
+  .landing__hero_container {
+    margin-top: 15vh;
+  }
 }
 
 @media only screen and (max-device-width: 1150px) {
+  .landing__hero_container {
+    margin-top: 20vh;
+  }
   .header_container__container {
     margin: 0 auto;
   }
@@ -631,7 +663,7 @@ footer .ocean .wave {
 
 @media only screen and (max-device-width: 800px) {
   .landing__hero_container {
-    margin-top: 20vh;
+    margin-top: 30vh;
   }
   .landing__hero_container_cards_container {
     display: -ms-grid;
@@ -650,9 +682,9 @@ footer .ocean .wave {
         -ms-flex-direction: column;
             flex-direction: column;
     gap: 20px;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
   .header_container__container .header_container__left {
     justify-self: flex-end;
@@ -675,6 +707,12 @@ footer .ocean .wave {
   #hero_img {
     position: absolute;
     width: 100vw;
+  }
+  .landing__hero_container {
+    margin-top: 40vh;
+  }
+  .header_container__container .header_container__title {
+    font-size: 6vw;
   }
 }
 

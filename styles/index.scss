@@ -85,9 +85,10 @@ body {
 .landing__hero_container {
   width: 100%;
   padding-left: 10vw;
-  gap: 20px;
+  gap: 40px;
   display: flex;
   flex-direction: column;
+  padding-bottom: 50px;
   * {
     position: relative;
     z-index: 5;
@@ -120,10 +121,22 @@ body {
   .landing__card_container {
     transition: all 0.25s ease-in-out;
     max-width: 275px;
-    background-color: white;
     color: black;
+    background-color: white;
     border-radius: 20px;
-    padding: 10px;
+    a {
+      color: black;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      .landing__card_container_header,
+      .landing__card_container_description {
+        max-width: 250px;
+        justify-self: center;
+      }
+    }
     &:hover {
       box-shadow: -3px 6px 37px -9px rgba(0, 0, 0, 0.75);
     }
@@ -143,6 +156,7 @@ body {
     }
     .landing__card_container_img {
       width: 100%;
+      border-radius: 20px 20px 0px 0px;
     }
   }
 }
@@ -173,7 +187,7 @@ body {
   .section__title {
     font-family: "Poppins", sans-serif;
     font-weight: 700;
-    font-size: 2.5rem;
+    font-size: 2.3rem;
   }
   .section__text {
     font-family: "Poppins", sans-serif;
@@ -409,9 +423,15 @@ footer {
     display: grid;
     grid-template-columns: repeat(2, 1fr) !important;
   }
+  .landing__hero_container {
+    margin-top: 15vh;
+  }
 }
 
 @media only screen and (max-device-width: 1150px) {
+  .landing__hero_container {
+    margin-top: 20vh;
+  }
   .header_container__container {
     margin: 0 auto;
   }
@@ -459,7 +479,7 @@ footer {
 
 @media only screen and (max-device-width: 800px) {
   .landing__hero_container {
-    margin-top: 20vh;
+    margin-top: 30vh;
   }
   .landing__hero_container_cards_container {
     display: grid;
@@ -471,7 +491,7 @@ footer {
   .header_container__container {
     flex-direction: column;
     gap: 20px;
-    align-items: flex-end;
+    align-items: flex-start;
     .header_container__left {
       justify-self: flex-end;
     }
@@ -494,6 +514,14 @@ footer {
   #hero_img {
     position: absolute;
     width: 100vw;
+  }
+  .landing__hero_container {
+    margin-top: 40vh;
+  }
+  .header_container__container {
+    .header_container__title {
+      font-size: 6vw;
+    }
   }
 }
 @media only screen and (max-device-width: 350px) {
