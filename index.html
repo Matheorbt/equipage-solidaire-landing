@@ -14,6 +14,20 @@
       href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
     />
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <!-- Google fonts Roboto Regular,Bold -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,100;1,200;1,400&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google fonts Poppins Regular, Bold -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- font awesome -->
     <link
       rel="stylesheet"
@@ -31,7 +45,17 @@
     <title>Equipage Solidaire</title>
   </head>
   <body>
-    <header></header>
+    <header class="google_opinions" id="notification_opinion">
+      <span>
+        Que pensez-vous de l’Equipage Solidaire ?
+        <a href="https://g.page/r/CZHYtPxGPXXNEBE/review" target="_blank"
+          >Je donne mon avis</a
+        ></span
+      >
+      <button onclick="handleDismiss()">
+        <i class="fa fa-times" aria-hidden="true"></i>
+      </button>
+    </header>
     <nav class="navbar">
       <img
         class="navbar__logo"
@@ -131,7 +155,7 @@
                   <i class="fa fa-chevron-right" aria-hidden="true"></i
                 ></span>
                 <p class="projects__list_card_subcontainer_description">
-                  Plateforme de livraison gratuite de repas à desitnation des
+                  Plateforme de livraison gratuite de repas à destination des
                   étudiants en difficulté.
                 </p>
                 <hr class="projects__list_card_subcontainer_hr" />
@@ -357,6 +381,11 @@
     <footer></footer>
   </body>
   <script>
+    const handleDismiss = () => {
+      const notification = document.getElementById("notification_opinion");
+      console.log(notification);
+      notification.classList.add("hidden");
+    };
     // Swiper
     const swiper = new Swiper(".swiper", {
       // Optional parameters

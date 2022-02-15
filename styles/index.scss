@@ -6,11 +6,42 @@
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
-  font-family: sans-serif;
 }
 
 body {
   overflow-x: hidden;
+}
+
+.google_opinions {
+  background-color: #ff0000;
+  color: white;
+  padding: 20px 0;
+  font-size: 1.1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  position: relative;
+  font-family: $secondary-font;
+  span {
+    grid-column: 2;
+  }
+  a {
+    color: white;
+    text-decoration: underline;
+  }
+  button {
+    all: unset;
+    grid-column: 4;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.hidden {
+  visibility: hidden;
+  height: 0px;
+  padding: 0;
 }
 
 .navbar {
@@ -19,13 +50,14 @@ body {
   background-color: white;
   padding: 10px 30px;
   gap: 50px;
+  font-family: $secondary-font;
   .navbar__logo {
     width: 100px;
   }
   .navbar__link_container {
     width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-around;
     align-items: center;
     gap: 40px;
     .navbar__link_item {
@@ -56,8 +88,9 @@ body {
     gap: 20px;
     .hero__center_title {
       color: white;
-      font-family: "Basic Commercial";
-      font-size: 10rem;
+      font-family: $primary-font;
+      font-weight: bold;
+      font-size: 8rem;
     }
     .hero__center_btn {
       background-color: #13ac8e;
@@ -66,6 +99,7 @@ body {
       border-radius: 50px;
       font-size: 1.5rem;
       color: white;
+      font-family: $primary-font;
     }
   }
 }
@@ -79,13 +113,14 @@ body {
   padding: 50px 0 50px 0;
   .presentation__title {
     font-size: $title-size;
+    font-family: $primary-font;
   }
   .presentation__subcontainer {
     display: flex;
     gap: 50px;
     align-items: center;
     .presentation__subcontainer_paragraph {
-      // revoir
+      font-family: $secondary-font;
       color: #616161;
       font-size: 1.7rem;
     }
@@ -99,6 +134,7 @@ body {
       }
       .presentation__subcontainer_left_link {
         text-align: center;
+        font-family: $secondary-font;
       }
     }
   }
@@ -115,12 +151,17 @@ body {
     margin: 0 auto;
     .projects__title {
       font-size: $title-size;
+      font-family: $primary-font;
     }
     .projects__list {
       display: flex;
       justify-content: space-around;
       align-items: center;
       .projects__list_card {
+        transition: all 0.25s ease-in-out;
+        &:hover {
+          box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+        }
         border-radius: 25px;
         display: flex;
         flex-direction: column;
@@ -149,10 +190,15 @@ body {
             padding: 10px;
             border-radius: 20px;
             color: white;
+            font-family: $secondary-font;
+            font-weight: bold;
           }
           .projects__list_card_subcontainer_header {
             display: flex;
             justify-content: space-between;
+          }
+          .projects__list_card_subcontainer_description {
+            font-family: $secondary-font;
           }
           .projects__list_card_subcontainer_link {
             text-align: center;
@@ -180,6 +226,7 @@ body {
 
     .map__title {
       font-size: $title-size;
+      font-family: $primary-font;
       .map__title_first {
         font-weight: 400;
       }
@@ -200,6 +247,7 @@ body {
           grid-template-columns: repeat(2, 1fr);
           column-gap: 20px;
           grid-gap: 20px;
+          font-family: $secondary-font;
           .map__left_city_tag {
             width: fit-content;
             font-size: 2rem;
@@ -228,7 +276,7 @@ body {
           }
           .map__left_remote_bg {
             z-index: 0;
-            width: 25%;
+            width: 40%;
             order: 1;
           }
           .map__left_remote_subcontainer {
@@ -239,6 +287,7 @@ body {
             flex-direction: column;
             .map__left_remote_title {
               font-size: 1.75rem;
+              font-family: $primary-font;
               .map__left_remote_title_first {
                 font-weight: 400;
               }
@@ -247,6 +296,10 @@ body {
               }
             }
           }
+          .map__left_remote_description {
+            font-family: $secondary-font;
+            font-size: 1.7rem;
+          }
           .map__left_remote_link {
             background-color: #df5f54;
             color: white;
@@ -254,6 +307,7 @@ body {
             font-size: 1.25rem;
             border-radius: 20px;
             width: fit-content;
+            font-family: $secondary-font;
           }
         }
       }
@@ -270,6 +324,7 @@ body {
   flex-direction: column;
   .media__title {
     font-size: $title-size;
+    font-family: $primary-font;
   }
   .media__logo_container {
     display: flex;
@@ -291,12 +346,14 @@ body {
   gap: 20px;
   .opinion__title {
     font-size: $title-size;
+    font-family: $primary-font;
   }
   .opinion__header {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
+    font-family: $secondary-font;
     .opinion__header_title {
       font-size: 1.5rem;
       color: #616161;

@@ -4,12 +4,5 @@ $text-color: #616161;
 
 $title-size: 3rem;
 
-@font-face {
-  font-family: "Basic Commercial";
-  src: url(../fonts/BasicCommercialLT-Bold.ttf) format("ttf");
-}
-
-@font-face {
-  font-family: "Basic Commercial";
-  src: url(../fonts/BasicCommercialLT-Light.ttf) format("ttf");
-}
+$primary-font: "Poppins";
+$secondary-font: "Roboto";
