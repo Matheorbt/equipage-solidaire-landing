@@ -32,7 +32,7 @@ body {
   button {
     all: unset;
     grid-column: 4;
-    &:hover {
+    padding &:hover {
       cursor: pointer;
     }
   }
