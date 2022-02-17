@@ -241,13 +241,19 @@
           <div class="map__subsection">
             <div class="map__left">
               <div class="map__left_city_tag_container">
-                <span class="map__left_city_tag">Paris</span>
-                <span class="map__left_city_tag">Valenciennes</span>
-                <span class="map__left_city_tag">Montreuil</span>
-                <span class="map__left_city_tag">Viroflay</span>
+                <div>
+                  <span class="map__left_city_tag">Paris</span>
+                  <span class="map__left_city_tag">Valenciennes</span>
+                </div>
+                <div>
+                  <span class="map__left_city_tag">Montreuil</span>
+                  <span class="map__left_city_tag">Viroflay</span>
+                </div>
                 <span class="map__left_city_tag">Vélizy-Villacoublay</span>
-                <span class="map__left_city_tag">Lyon</span>
-                <span class="map__left_city_tag">Montpellier</span>
+                <div>
+                  <span class="map__left_city_tag">Lyon</span>
+                  <span class="map__left_city_tag">Montpellier</span>
+                </div>
                 <span class="map__left_city_tag">Le Havre</span>
               </div>
               <div class="map__left_remote">
@@ -349,23 +355,40 @@
       </section>
       <!-- Beneficiaries opinions -->
       <section class="opinion">
-        <h1 class="opinion__title">Parole de bénéficiaire</h1>
-        <span class="opinion__header"
-          ><h3 class="opinion__header_title">Projet</h3>
-          <img
-            class="opinion__header_img"
-            src="./images/delivraide_logo_transparent.jpg"
-        /></span>
-        <div class="carousel__container">
-          <div class="swiper">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-              <!-- Slides -->
-              <div class="swiper-slide">
-                <img
-                  src="./images/equipage_solidaire__1.JPG"
-                  alt="charity actions"
-                />
+        <div class="opinion-container">
+          <h1 class="opinion__title">Parole de bénéficiaire</h1>
+          <span class="opinion__header"
+            ><h3 class="opinion__header_title">Projet</h3>
+            <img
+              class="opinion__header_img"
+              src="./images/delivraide_logo_transparent.png"
+          /></span>
+          <div class="carousel__container">
+            <div class="swiper">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                  <article class="opinion__container">
+                    <p class="opnion__paragraph">
+                      "Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Ipsam doloribus sequi repudiandae. Cupiditate nemo,
+                      molestiae quis minus possimus laboriosam repellat
+                      molestias odio laborum officia nulla vitae minima non
+                      quibusdam. Reiciendis."
+                    </p>
+                    <span class="opinion__signature"
+                      ><img
+                        src="./images/equipage_solidaire__1.JPG"
+                        alt="profile
+                    google opinion"
+                      /><span
+                        ><span class="name">Sarah/</span>Bénéficiaire du projet
+                        <span class="delivraide">Delivr’aide</span></span
+                      >
+                    </span>
+                  </article>
+                </div>
               </div>
             </div>
 
@@ -373,12 +396,75 @@
             <div class="swiper-button-prev">
               <i class="fa fa-chevron-left" aria-hidden="true"></i>
             </div>
-            <div class="swiper-button-next"></div>
+            <div class="swiper-button-next">
+              <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            </div>
           </div>
         </div>
       </section>
     </main>
-    <footer></footer>
+    <footer>
+      <div class="footer-content">
+        <div class="subcontainer">
+          <div class="left">
+            <ul class="left-link-list">
+              <li>
+                <a
+                  href="https://www.instagram.com/equipagesolidaire/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/company/equipagesolidaire"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.facebook.com/Equipagesolidaire/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <i class="fa-brands fa-facebook"></i>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://twitter.com/equipagesolidr"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <i class="fa-brands fa-twitter"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <hr class="separator" />
+          <div class="right">
+            <img
+              class="logo"
+              src="./images/logo_equipage_solidaire_colored.png"
+              alt="logo equipage solidaire"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="ocean">
+        <span class="copyright">
+          Copyright ©<span id="currentYear"></span> L'équipage solidaire. All
+          Rights Reserved</span
+        >
+        <div class="wave"></div>
+        <div class="wave"></div>
+      </div>
+    </footer>
   </body>
   <script>
     const handleDismiss = () => {
@@ -386,6 +472,8 @@
       console.log(notification);
       notification.classList.add("hidden");
     };
+    const copyright = document.getElementById("currentYear");
+    copyright.innerText = new Date().getFullYear();
     // Swiper
     const swiper = new Swiper(".swiper", {
       // Optional parameters
