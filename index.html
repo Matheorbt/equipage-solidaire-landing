@@ -63,7 +63,7 @@
         alt="Logo équipage solidaire"
       />
       <ul class="navbar__link_container">
-        <li class="navbar__link_item"><a href="#section-id">Accueil</a></li>
+        <li class="navbar__link_item"><a href="#project">Accueil</a></li>
         <li class="navbar__link_item"><a href="#section-id">À propos</a></li>
         <li class="navbar__link_item"><a href="#section-id">Nos projets</a></li>
         <li class="navbar__link_item">
@@ -127,6 +127,7 @@
             <a
               class="presentation__subcontainer_left_link"
               href="https://deli-wiki.netlify.app/"
+              target="_blank"
               >Découvrez notre histoire
               <i class="fa fa-chevron-right" aria-hidden="true"></i
             ></a>
@@ -134,101 +135,153 @@
         </div>
       </article>
       <!-- Current projects section -->
-      <section class="projects">
+      <section class="projects" id="project">
         <div class="projects_container">
           <h1 class="projects__title">Nos projets en cours</h1>
-          <ul class="projects__list">
-            <li class="projects__list_card">
-              <img
-                class="projects__list_card_img"
-                src="./images/delivraide_logo.jpg"
-                alt="delivr'aide logo"
-              />
-              <div class="projects__list_card_subcontainer">
-                <div class="projects__list_card_subcontainer_tag">
-                  SOLIDARITÉ ET INSERTION
+          <div class="carousel__container">
+            <div class="swiper-card">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                  <li class="projects__list_card">
+                    <img
+                      class="projects__list_card_img"
+                      src="./images/delivraide_logo.jpg"
+                      alt="delivr'aide logo"
+                    />
+                    <div class="projects__list_card_subcontainer">
+                      <div class="projects__list_card_subcontainer_tag">
+                        SOLIDARITÉ ET INSERTION
+                      </div>
+                      <span class="projects__list_card_subcontainer_header"
+                        ><h3 class="projects__list_card_subcontainer_name">
+                          Delivr'aide
+                        </h3>
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i
+                      ></span>
+                      <p class="projects__list_card_subcontainer_description">
+                        Plateforme de livraison gratuite de repas à destination
+                        des étudiants en difficulté.
+                      </p>
+                      <hr class="projects__list_card_subcontainer_hr" />
+                      <a
+                        class="projects__list_card_subcontainer_link"
+                        href="https://delivraide.org/"
+                        target="_blank"
+                        >Nous rejoindre
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i
+                      ></a>
+                    </div>
+                  </li>
                 </div>
-                <span class="projects__list_card_subcontainer_header"
-                  ><h3 class="projects__list_card_subcontainer_name">
-                    Delivr'aide
-                  </h3>
-                  <i class="fa fa-chevron-right" aria-hidden="true"></i
-                ></span>
-                <p class="projects__list_card_subcontainer_description">
-                  Plateforme de livraison gratuite de repas à destination des
-                  étudiants en difficulté.
-                </p>
-                <hr class="projects__list_card_subcontainer_hr" />
-                <a
-                  class="projects__list_card_subcontainer_link"
-                  href="https://delivraide.org/"
-                  target="_blank"
-                  >Nous rejoindre
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i
-                ></a>
-              </div>
-            </li>
-            <li class="projects__list_card">
-              <img
-                class="projects__list_card_img"
-                src="./images/student_discord_logo.jpg"
-                alt="Discord étudiant logo"
-              />
-              <div class="projects__list_card_subcontainer">
-                <div class="projects__list_card_subcontainer_tag">
-                  ÉDUCATION POUR TOUS
+                <div class="swiper-slide">
+                  <li class="projects__list_card">
+                    <img
+                      class="projects__list_card_img"
+                      src="./images/informatic_operation.jpg"
+                      alt="Discord étudiant logo"
+                    />
+                    <div class="projects__list_card_subcontainer">
+                      <div class="projects__list_card_subcontainer_tag">
+                        ÉDUCATION POUR TOUS
+                      </div>
+                      <span class="projects__list_card_subcontainer_header"
+                        ><h3 class="projects__list_card_subcontainer_name">
+                          Opération informatique
+                        </h3>
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i
+                      ></span>
+                      <p class="projects__list_card_subcontainer_description">
+                        Distribution de kit informatique aux personnes isolées
+                        et touchées par la fracture numérique.
+                      </p>
+                      <hr class="projects__list_card_subcontainer_hr" />
+                      <a
+                        class="projects__list_card_subcontainer_link"
+                        href="https://delivraide.org/"
+                        target="_blank"
+                        >Nous rejoindre
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i
+                      ></a>
+                    </div>
+                  </li>
                 </div>
-                <span class="projects__list_card_subcontainer_header"
-                  ><h3 class="projects__list_card_subcontainer_name">
-                    Discord Étudiant
-                  </h3>
-                  <i class="fa fa-chevron-right" aria-hidden="true"></i
-                ></span>
-                <p class="projects__list_card_subcontainer_description">
-                  Relai numériques au service de l’orientation et de la
-                  formation pour jeunes.
-                </p>
-                <hr class="projects__list_card_subcontainer_hr" />
-                <a
-                  class="projects__list_card_subcontainer_link"
-                  href="https://delivraide.org/"
-                  target="_blank"
-                  >Nous rejoindre
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i
-                ></a>
-              </div>
-            </li>
-            <li class="projects__list_card">
-              <img
-                class="projects__list_card_img"
-                src="./images/informatic_operation.jpg"
-                alt="Discord étudiant logo"
-              />
-              <div class="projects__list_card_subcontainer">
-                <div class="projects__list_card_subcontainer_tag">
-                  ÉDUCATION POUR TOUS
+                <div class="swiper-slide">
+                  <li class="projects__list_card">
+                    <img
+                      class="projects__list_card_img"
+                      src="./images/student_discord_logo.jpg"
+                      alt="Discord étudiant logo"
+                    />
+                    <div class="projects__list_card_subcontainer">
+                      <div class="projects__list_card_subcontainer_tag">
+                        ÉDUCATION POUR TOUS
+                      </div>
+                      <span class="projects__list_card_subcontainer_header"
+                        ><h3 class="projects__list_card_subcontainer_name">
+                          Discord Étudiant
+                        </h3>
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i
+                      ></span>
+                      <p class="projects__list_card_subcontainer_description">
+                        Relai numériques au service de l’orientation et de la
+                        formation pour jeunes.
+                      </p>
+                      <hr class="projects__list_card_subcontainer_hr" />
+                      <a
+                        class="projects__list_card_subcontainer_link"
+                        href="https://delivraide.org/"
+                        target="_blank"
+                        >Nous rejoindre
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i
+                      ></a>
+                    </div>
+                  </li>
                 </div>
-                <span class="projects__list_card_subcontainer_header"
-                  ><h3 class="projects__list_card_subcontainer_name">
-                    Opération informatique
-                  </h3>
-                  <i class="fa fa-chevron-right" aria-hidden="true"></i
-                ></span>
-                <p class="projects__list_card_subcontainer_description">
-                  Distribution de kit informatique aux personnes isolées et
-                  touchées par la fracture numérique.
-                </p>
-                <hr class="projects__list_card_subcontainer_hr" />
-                <a
-                  class="projects__list_card_subcontainer_link"
-                  href="https://delivraide.org/"
-                  target="_blank"
-                  >Nous rejoindre
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i
-                ></a>
+                <div class="swiper-slide">
+                  <li class="projects__list_card">
+                    <img
+                      class="projects__list_card_img"
+                      src="./images/student_discord_logo.jpg"
+                      alt="Discord étudiant logo"
+                    />
+                    <div class="projects__list_card_subcontainer">
+                      <div class="projects__list_card_subcontainer_tag">
+                        SOLIDARITÉ
+                      </div>
+                      <span class="projects__list_card_subcontainer_header"
+                        ><h3 class="projects__list_card_subcontainer_name">
+                          Maraudes
+                        </h3>
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i
+                      ></span>
+                      <p class="projects__list_card_subcontainer_description">
+                        Relai numériques au service de l’orientation et de la
+                        formation pour jeunes.
+                      </p>
+                      <hr class="projects__list_card_subcontainer_hr" />
+                      <a
+                        class="projects__list_card_subcontainer_link"
+                        href="https://delivraide.org/"
+                        target="_blank"
+                        >Nous rejoindre
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i
+                      ></a>
+                    </div>
+                  </li>
+                </div>
               </div>
-            </li>
-          </ul>
+            </div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev-card">
+              <i class="fa fa-chevron-left" aria-hidden="true"></i>
+            </div>
+            <div class="swiper-button-next-card">
+              <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            </div>
+          </div>
         </div>
       </section>
       <!-- Map info. section -->
@@ -291,66 +344,70 @@
       <section class="media">
         <h1 class="media__title">Ils parlent de nous</h1>
         <div class="media__logo_container">
-          <img
-            id="brut_logo"
-            class="media__logo_item"
-            src="./images/media_logo/Brut_logo.svg"
-            alt="media logo"
-          />
-          <img
-            id="pepsico_logo"
-            class="media__logo_item"
-            src="./images/media_logo/pepsico-og-logo.jpg"
-            alt="media logo"
-          />
-          <img
-            id="nexity_logo"
-            class="media__logo_item"
-            src="./images/media_logo/logo-nexity-1200.png"
-            alt="media logo"
-          />
-          <img
-            id="franprix_logo"
-            class="media__logo_item"
-            src="./images/media_logo/Franprix_logo.png"
-            alt="media logo"
-          />
-          <img
-            id="phenyx_logo"
-            class="media__logo_item"
-            src="./images/media_logo/Phenyx_logo.png"
-            alt="media logo"
-          />
-          <img
-            id="francetrois_logo"
-            class="media__logo_item"
-            src="./images/media_logo/FranceTrois_logo.svg"
-            alt="media logo"
-          />
-          <img
-            id="mediavenir_logo"
-            class="media__logo_item"
-            src="./images/media_logo/Mediavenir_logo.png"
-            alt="media logo"
-          />
-          <img
-            id="letudiant_logo"
-            class="media__logo_item"
-            src="./images/media_logo/Letudiant_logo.png"
-            alt="media logo"
-          />
-          <img
-            id="fondation_logo"
-            class="media__logo_item"
-            src="./images/media_logo/logo-fondation-carrefour.png"
-            alt="media logo"
-          />
-          <img
-            id="inter_logo"
-            class="media__logo_item"
-            src="./images/media_logo/France_Inter_logo.svg"
-            alt="media logo"
-          />
+          <div class="media__logo_subcontainer">
+            <img
+              id="brut_logo"
+              class="media__logo_item"
+              src="./images/media_logo/Brut_logo.svg"
+              alt="media logo"
+            />
+            <img
+              id="pepsico_logo"
+              class="media__logo_item"
+              src="./images/media_logo/pepsico-og-logo.jpg"
+              alt="media logo"
+            />
+            <img
+              id="nexity_logo"
+              class="media__logo_item"
+              src="./images/media_logo/logo-nexity-1200.png"
+              alt="media logo"
+            />
+            <img
+              id="franprix_logo"
+              class="media__logo_item"
+              src="./images/media_logo/Franprix_logo.png"
+              alt="media logo"
+            />
+            <img
+              id="phenyx_logo"
+              class="media__logo_item"
+              src="./images/media_logo/Phenyx_logo.png"
+              alt="media logo"
+            />
+          </div>
+          <div class="media__logo_subcontainer">
+            <img
+              id="francetrois_logo"
+              class="media__logo_item"
+              src="./images/media_logo/FranceTrois_logo.svg"
+              alt="media logo"
+            />
+            <img
+              id="mediavenir_logo"
+              class="media__logo_item"
+              src="./images/media_logo/Mediavenir_logo.png"
+              alt="media logo"
+            />
+            <img
+              id="letudiant_logo"
+              class="media__logo_item"
+              src="./images/media_logo/Letudiant_logo.png"
+              alt="media logo"
+            />
+            <img
+              id="fondation_logo"
+              class="media__logo_item"
+              src="./images/media_logo/logo-fondation-carrefour.png"
+              alt="media logo"
+            />
+            <img
+              id="inter_logo"
+              class="media__logo_item"
+              src="./images/media_logo/France_Inter_logo.svg"
+              alt="media logo"
+            />
+          </div>
         </div>
       </section>
       <!-- Beneficiaries opinions -->
@@ -407,6 +464,18 @@
       <div class="footer-content">
         <div class="subcontainer">
           <div class="left">
+            <a
+              href="https://linktr.ee/equipagesolidaire"
+              class="footer-btn"
+              target="_blank"
+              ><i class="fa-solid fa-link"></i> Linktree</a
+            >
+            <a
+              href="https://linktr.ee/equipagesolidaire"
+              class="footer-btn"
+              target="_blank"
+              ><i class="fa-solid fa-link"></i> Nous contacter</a
+            >
             <ul class="left-link-list">
               <li>
                 <a
@@ -474,6 +543,7 @@
     };
     const copyright = document.getElementById("currentYear");
     copyright.innerText = new Date().getFullYear();
+
     // Swiper
     const swiper = new Swiper(".swiper", {
       // Optional parameters
@@ -488,6 +558,18 @@
         delay: 5000,
       },
     });
+
+    const swiperCard = new Swiper(".swiper-card", {
+      // Optional parameters
+      direction: "horizontal",
+      slidesPerView: 3,
+      // Navigation arrows
+      navigation: {
+        nextEl: ".swiper-button-next-card",
+        prevEl: ".swiper-button-prev-card",
+      },
+    });
+
     // AOS
     AOS.init();
   </script>
