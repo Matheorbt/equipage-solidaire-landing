@@ -3,6 +3,7 @@ import React from "react";
 function Remote() {
   return (
     <svg
+    className="map__left_remote_bg"
       xmlns="http://www.w3.org/2000/svg"
       width="1144"
       height="637"
