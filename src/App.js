@@ -54,7 +54,7 @@ function App() {
     <div>
       <header className="google_opinions" id="notification_opinion">
         <span>
-          Que pensez-vous de l’Equipage Solidaire ?
+          Que pensez-vous de l’Equipage Solidaire ?{" "}
           <a
             href="https://g.page/r/CZHYtPxGPXXNEBE/review"
             target="_blank"
