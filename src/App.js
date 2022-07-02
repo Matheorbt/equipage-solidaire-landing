@@ -1,22 +1,17 @@
 import { useEffect } from "react";
 import Gallery from "react-photo-gallery";
-
+import { AiFillTwitterCircle, AiFillLinkedin, AiFillInstagram } from 'react-icons/ai';
+import { BsFacebook } from 'react-icons/bs';
+import Remote from './images/undraw_working_remotely'
 import {
-  LogoTransparent,
   LogoDelivraide,
   PictureOne,
   PictureTwo,
-  PictureThree,
-  PictureFour,
-  PictureFive,
-  PictureSix,
-  PictureSeven,
   HeroBanner,
   InformaticOperation,
   LogoColored,
-  LogoWhite,
-  LogoES,
   StudentDiscord,
+  Map,
 } from "./images/index";
 
 import {
@@ -31,10 +26,6 @@ import {
 
 import { photos } from "./images/photos";
 
-import Remote from "./images/undraw_working_remotely";
-import Map from "./images/map";
-import BgOpinions from "./images/bg_opinion";
-
 import Brut from "./images/media_logo/Brut_logo";
 import FranceInter from "./images/media_logo/France_Inter_logo";
 import FranceTrois from "./images/media_logo/FranceTrois_logo";
@@ -42,7 +33,7 @@ import FranceTrois from "./images/media_logo/FranceTrois_logo";
 import Opinion from "./Components/Opinion";
 import ProjectCard from "./Components/ProjectCard";
 
-import { Pagination, Scrollbar, A11y } from "swiper";
+import { Pagination, A11y, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
@@ -57,7 +48,6 @@ function App() {
 
   useEffect(() => {
     const copyright = document.getElementById("currentYear");
-    console.log("new date: ", new Date().getFullYear());
     copyright.innerText = new Date().getFullYear();
   }, []);
 
@@ -65,7 +55,7 @@ function App() {
     <div>
       <header className="google_opinions" id="notification_opinion">
         <span>
-          Que pensez-vous de l’Equipage Solidaire ?
+          Que pensez-vous de l’Equipage Solidaire ?{" "}
           <a
             href="https://g.page/r/CZHYtPxGPXXNEBE/review"
             target="_blank"
@@ -92,16 +82,16 @@ function App() {
             <a href="#section-id">À propos</a>
           </li>
           <li className="navbar__link_item">
-            <a href="#section-id">Nos projets</a>
+            <a href="#project">Nos projets</a>
           </li>
           <li className="navbar__link_item">
-            <a href="#section-id">Nous rejoindre</a>
+            <a href="#join">Nous rejoindre</a>
           </li>
           <li className="navbar__link_item">
-            <a href="#section-id">Contact</a>
+            <a href="#contact">Contact</a>
           </li>
           <li className="navbar__link_item">
-            <a href="#section-id">Nos partenaires</a>
+            <a href="#partner">Nos partenaires</a>
           </li>
         </ul>
       </nav>
@@ -171,11 +161,30 @@ function App() {
             <div className="carousel__container">
               <Swiper
                 modules={[Pagination, A11y]}
-                spaceBetween={50}
-                slidesPerView={3}
+                spaceBetween={100}
+                slidesPerView={4}
+                loop={true}
                 pagination={{ clickable: true }}
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log("slide change")}
+                breakpoints={{
+                  640: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                  },
+                  768: {
+                    slidesPerView: 2,
+                    spaceBetween: 40,
+                  },
+                  1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 50,
+                  },
+                  1408: {
+                    slidesPerView: 4,
+                    spaceBetween: 100,
+                  },
+                }}
               >
                 <SwiperSlide>
                   <ProjectCard
@@ -226,10 +235,10 @@ function App() {
           </div>
         </section>
         {/* Map info. section */}
-        <section className="map">
+        <section className="map" id="join">
           <div className="map_container">
             <h1 className="map__title">
-              <span className="map__title_first">Engagez vous</span>
+              <span className="map__title_first">Engagez vous </span>
               <span className="map__title_second">près de chez vous</span>
             </h1>
             <div className="map__subsection">
@@ -238,25 +247,25 @@ function App() {
                   <div>
                     <span className="map__left_city_tag">Paris</span>
                     <span className="map__left_city_tag">Valenciennes</span>
-                  </div>
-                  <div>
                     <span className="map__left_city_tag">Montreuil</span>
-                    <span className="map__left_city_tag">Viroflay</span>
                   </div>
-                  <span className="map__left_city_tag">
-                    Vélizy-Villacoublay
-                  </span>
                   <div>
+                    <span className="map__left_city_tag">Viroflay</span>
+                    <span className="map__left_city_tag">
+                      Vélizy-Villacoublay
+                    </span>
                     <span className="map__left_city_tag">Lyon</span>
-                    <span className="map__left_city_tag">Montpellier</span>
                   </div>
-                  <span className="map__left_city_tag">Le Havre</span>
+                  <div>
+                    <span className="map__left_city_tag">Montpellier</span>
+                    <span className="map__left_city_tag">Le Havre</span>
+                  </div>
                 </div>
                 <div className="map__left_remote">
-                  <Remote className="map__left_remote_bg" />
+                  <Remote />
                   <div className="map__left_remote_subcontainer">
                     <h3 className="map__left_remote_title">
-                      <span className="map__left_remote_title_first">Ou</span>
+                      <span className="map__left_remote_title_first">Ou </span>
                       <span className="map__left_remote_title_second">
                         à distance
                       </span>
@@ -272,60 +281,70 @@ function App() {
                 </div>
               </div>
               <div className="map__right">
-                <Map />
+                <img src={Map} alt='map' />
               </div>
             </div>
           </div>
         </section>
         {/* Media talking about us section */}
-        <section className="media">
-          <h1 className="media__title">Ils parlent de nous</h1>
+        <section className="media" id="partner">
           <div className="media__logo_container">
+            {/* Partners */}
+            <h1 className="media__title">Nos partenaires</h1>
             <div className="media__logo_subcontainer">
-              <Brut className="media__logo_item" />
               <img
                 id="pepsico_logo"
+                width='200'
                 className="media__logo_item"
                 src={Pepsico}
                 alt="media logo"
               />
               <img
                 id="nexity_logo"
+                width='125'
                 className="media__logo_item"
                 src={Nexity}
                 alt="media logo"
               />
               <img
                 id="franprix_logo"
+                width='200'
                 className="media__logo_item"
                 src={Franprix}
-                alt="media logo"
-              />
-              <img
-                id="phenyx_logo"
-                className="media__logo_item"
-                src={Phenyx}
-                alt="media logo"
-              />
-            </div>
-            <div className="media__logo_subcontainer">
-              <FranceTrois />
-              <img
-                id="mediavenir_logo"
-                className="media__logo_item"
-                src={Mediavenir}
-                alt="media logo"
-              />
-              <img
-                id="letudiant_logo"
-                className="media__logo_item"
-                src={Letudiant}
                 alt="media logo"
               />
               <img
                 id="fondation_logo"
                 className="media__logo_item"
                 src={FondationCarrefour}
+                width='200'
+                alt="media logo"
+              />
+            </div>
+            {/* Medias */}
+            <h1 className="media__title">Ils parlent de nous</h1>
+            <div className="media__logo_subcontainer">
+              <img
+                id="phenyx_logo"
+                width='125'
+                className="media__logo_item"
+                src={Phenyx}
+                alt="media logo"
+              />
+              <Brut />
+              <FranceTrois />
+              <img
+                id="mediavenir_logo"
+                width='125'
+                className="media__logo_item"
+                src={Mediavenir}
+                alt="media logo"
+              />
+              <img
+                id="letudiant_logo"
+                width='150'
+                className="media__logo_item"
+                src={Letudiant}
                 alt="media logo"
               />
               <FranceInter />
@@ -338,9 +357,10 @@ function App() {
             <h1 className="opinion__title">Parole de bénéficiaire</h1>
             <div className="carousel__container">
               <Swiper
-                modules={[Pagination, A11y]}
-                spaceBetween={50}
+                modules={[Pagination, A11y, Autoplay]}
                 slidesPerView={1}
+                autoplay={{ delay: 10000 }}
+                loop={true}
                 pagination={{ clickable: true }}
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log("slide change")}
@@ -373,6 +393,7 @@ function App() {
             </div>
           </div>
         </section>
+        {/* Donation */}
         <article className="help">
           <div className="help-container">
             <h1 className="help__title">Nous soutenir</h1>
@@ -404,6 +425,7 @@ function App() {
             </div>
           </div>
         </article>
+        {/* Images */}
         <article className="images">
           <div className="images-container">
             <h1 className="images__title">L'Equipage en images</h1>
@@ -413,7 +435,7 @@ function App() {
           </div>
         </article>
       </main>
-      <footer>
+      <footer id="contact">
         <div className="footer-content">
           <div className="subcontainer">
             <div className="left">
@@ -440,7 +462,7 @@ function App() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <i className="fa-brands fa-instagram"></i>
+                    <AiFillInstagram color="#00a6ff" />
                   </a>
                 </li>
                 <li>
@@ -449,7 +471,7 @@ function App() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <i className="fa-brands fa-linkedin"></i>
+                    <AiFillLinkedin color="#00a6ff" />
                   </a>
                 </li>
                 <li>
@@ -458,7 +480,7 @@ function App() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <i className="fa-brands fa-facebook"></i>
+                    <BsFacebook color="#00a6ff" />
                   </a>
                 </li>
                 <li>
@@ -467,7 +489,7 @@ function App() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <i className="fa-brands fa-twitter"></i>
+                    <AiFillTwitterCircle color="#00a6ff" />
                   </a>
                 </li>
               </ul>

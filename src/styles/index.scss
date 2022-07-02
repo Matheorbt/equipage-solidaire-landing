@@ -48,11 +48,18 @@ body {
 
 .navbar {
   display: flex;
+  position: absolute;
+  top: 0;
+  z-index: 100;
   width: 100%;
-  background-color: white;
   padding: 10px 30px;
   gap: 50px;
   font-family: $secondary-font;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   .navbar__logo {
     width: 100px;
   }
@@ -64,7 +71,7 @@ body {
     gap: 40px;
     .navbar__link_item {
       a {
-        color: black;
+        color: white;
         font-size: 1.25rem;
       }
     }
@@ -165,10 +172,11 @@ body {
       display: flex;
       justify-content: space-around;
       align-items: center;
+      width: 100%;
       .projects__list_card {
+        margin: 10px 0 0 10px;
         transition: all 0.25s ease-in-out;
         box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
-
         &:hover {
           box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.25);
         }
@@ -234,8 +242,8 @@ body {
   background-color: #f9f8f6;
   padding: 50px 0 50px 0;
   .map_container {
-    flex-direction: column;
     display: flex;
+    flex-direction: column;
     gap: 50px;
     width: 95%;
     margin: 0 auto;
@@ -270,15 +278,13 @@ body {
           }
           .map__left_city_tag {
             width: fit-content;
-            font-size: 2rem;
+            font-size: 1.5rem;
+            font-weight: bold;
             padding: 10px 20px;
             background: #ffffff;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 50px;
             transition: all 0.25s ease-in-out;
-            &:hover {
-              box-shadow: inset 0px 0px 0px rgba(0, 0, 0, 0.25);
-            }
           }
         }
         .map__left_remote {
@@ -297,6 +303,7 @@ body {
           .map__left_remote_bg {
             z-index: 0;
             width: 40%;
+            height: 220px;
             order: 1;
           }
           .map__left_remote_subcontainer {
@@ -360,9 +367,8 @@ body {
     width: 100%;
     flex-direction: column;
     justify-content: space-around;
-    align-items: flex-end;
     transition: all 0.2s ease-in-out;
-    gap: 20px;
+    gap: 50px;
     .media__logo_subcontainer {
       display: flex;
       gap: 20px;
@@ -370,8 +376,11 @@ body {
       align-items: center;
       width: 100%;
     }
-    .media__logo_item {
+    .media__logo_item_size {
       width: 125px;
+    }
+    .media__logo_item {
+      transition: all 0.15s ease-in-out;
       &:hover {
         filter: grayscale(1);
       }
@@ -545,7 +554,7 @@ body {
 
 footer {
   width: 100%;
-  overflow-x: visible;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   background-color: #f9f8f6;
@@ -570,9 +579,8 @@ footer {
           display: flex;
           gap: 20px;
           a {
-            color: black;
             font-size: 3.5rem;
-            transition: opacity 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
             &:hover {
               opacity: 0.7;
             }
@@ -607,6 +615,81 @@ footer {
   }
 }
 
+.contact_header__container {
+  margin-bottom: 20px;
+  .contact_header__subcontainer {
+    .contact_header__subcontainer_left {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px;
+    img {
+      width: 100px;
+    }
+    h1 {
+      font-size: 24px;
+    }
+  }
+  hr {
+    width: 100%;
+    background-color: #e6e7eb;
+  }
+}
+
+.contact__input {
+  margin: 0px 2px;
+  width: 90%;
+  border-radius: 10px;
+  font-size: 16px;
+  padding: 20px;
+  margin: 10px;
+  outline: none;
+  background-color: white;
+  font-family: $secondary-font;
+  color: black;
+  border: none;
+}
+
+.contact-main {
+  background-color: #f9f8f6;
+  font-family: $primary-font;
+  min-height: 100vh;
+  .contact-title {
+    text-align: center;
+    font-family: $secondary-font;
+    margin-bottom: 40px;
+  }
+  .form-contact {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    label {
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .contact-btn {
+      all: unset;
+      border-radius: 10px;
+      font-size: 24px;
+      width: fit-content;
+      padding: 5px 10px;
+      background-color: $secondary-color;
+      color: white;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+      transition: all 0.25s ease-in-out;
+      margin: auto;
+      &:hover {
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.25);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
 .wave:nth-of-type(2) {
   top: -175px;
   animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite,
@@ -630,5 +713,24 @@ footer {
   }
   50% {
     transform: translate3d(0, 5px, 0);
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .map__subsection {
+    flex-direction: column;
+  }
+  .map__left_city_tag_container {
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .navbar__link_container {
+    visibility: hidden;
+  }
+  .presentation__subcontainer {
+    flex-direction: column;
   }
 }
