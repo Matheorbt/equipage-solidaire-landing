@@ -6,9 +6,9 @@ const Loader = () => {
     return (
         <div>
             <TailSpin
-                color="#ff0000"
-                height={100}
-                width={100}
+                color="#00a6ff"
+                height={75}
+                width={75}
             />
         </div>
     )

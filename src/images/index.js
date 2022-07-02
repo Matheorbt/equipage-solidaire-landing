@@ -13,3 +13,5 @@ export const LogoColored = require("./logo_equipage_solidaire_colored.png");
 export const LogoWhite = require("./logo_equipage_solidaire_white.png");
 export const LogoES = require("./logo_equipage_solidaire.png");
 export const StudentDiscord = require("./student_discord_logo.jpg");
+export const Map = require("./map.png");
+

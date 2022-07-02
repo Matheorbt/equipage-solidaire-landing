@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Input from './Components/Input'
 import Loader from "./Components/Loader"
+import HeaderContact from './Components/ContactHeader'
 
 const Partner = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -25,9 +26,11 @@ const Partner = () => {
     };
 
     return (
-        <>
-            <div>Partner</div>
+        <main className='contact-main'>
+            <HeaderContact />
+            <h1 className='contact-title'>Devenir partenaire</h1>
             <form className='form-contact' onSubmit={handleSubmit}>
+                <label>Message</label>
                 <Input
                     placeholder="Message"
                     name="message"
@@ -35,6 +38,7 @@ const Partner = () => {
                     handleChange={handleChange}
                     required={true}
                 />
+                <label>Nom</label>
                 <Input
                     placeholder="Nom"
                     name="lastName"
@@ -42,6 +46,7 @@ const Partner = () => {
                     handleChange={handleChange}
                     required={true}
                 />
+                <label>Prénom</label>
                 <Input
                     placeholder="Prénom"
                     name="name"
@@ -49,6 +54,7 @@ const Partner = () => {
                     handleChange={handleChange}
                     required={true}
                 />
+                <label>E-mail</label>
                 <Input
                     placeholder="Votre E-mail"
                     name="email"
@@ -60,13 +66,14 @@ const Partner = () => {
                     <Loader />
                 ) : (
                     <button
+                        className='contact-btn'
                         type="submit"
                     >
-                        Send now
+                        Envoyer
                     </button>
                 )}
             </form>
-        </>
+        </main>
     )
 }
 

@@ -2,7 +2,7 @@ import React from "react";
 
 function FranceTrois() {
   return (
-    <svg className="media__logo_item" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 549.21 549.21">
+    <svg className="media__logo_item media__logo_item_size" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 549.21 549.21">
       <path
         fillRule="evenodd"
         d="M100.4 806.96h460.63V346.33H100.4v460.63z"

@@ -4,7 +4,7 @@ function FranceInter() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="media__logo_item"
+      className="media__logo_item media__logo_item_size"
       width="650"
       height="122.485"
       version="1.1"

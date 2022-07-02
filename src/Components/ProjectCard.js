@@ -24,7 +24,7 @@ const ProjectCard = ({ tags, logo, name, description, link, cta }) => {
           target="_blank"
           rel="noreferrer"
         >
-          {cta}
+          {cta + " "}
           <i className="fa-solid fa-arrow-up-right-from-square"></i>
         </a>
       </div>

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Input from './Components/Input'
 import divisionInfo from "./divisionContact"
 import Loader from "./Components/Loader"
+import HeaderContact from './Components/ContactHeader'
 
 const Contact = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -26,21 +27,25 @@ const Contact = () => {
     };
 
     return (
-        <>
-            <div>Contact</div>
+        <main className='contact-main'>
+            <HeaderContact />
+            <h1 className='contact-title'>Nous contacter</h1>
             <form className='form-contact' onSubmit={handleSubmit}>
-                <select name="divisionTo" onChange={(e) => handleChange(e, "divisionTo")}>
+                <label>Pôle concerné(optionel)</label>
+                <select className='contact__input' name="divisionTo" onChange={(e) => handleChange(e, "divisionTo")}>
                     {divisionInfo.map((division, index) => (
                         <option key={index} value={division.email}>{division.name}</option>
                     ))}
                 </select>
+                <label>Message</label>
                 <Input
                     placeholder="Message"
                     name="message"
                     type="text"
                     handleChange={handleChange}
-                    required={true}
+                    required={false}
                 />
+                <label>Nom</label>
                 <Input
                     placeholder="Nom"
                     name="lastName"
@@ -48,6 +53,7 @@ const Contact = () => {
                     handleChange={handleChange}
                     required={true}
                 />
+                <label>Prénom</label>
                 <Input
                     placeholder="Prénom"
                     name="name"
@@ -55,6 +61,7 @@ const Contact = () => {
                     handleChange={handleChange}
                     required={true}
                 />
+                <label>Adresse e-mail</label>
                 <Input
                     placeholder="Votre E-mail"
                     name="email"
@@ -66,13 +73,14 @@ const Contact = () => {
                     <Loader />
                 ) : (
                     <button
+                        className='contact-btn'
                         type="submit"
                     >
-                        Send now
+                        Envoyer
                     </button>
                 )}
             </form>
-        </>
+        </main>
     )
 }
 
