@@ -102,9 +102,11 @@ body {
       font-family: $primary-font;
       font-weight: bold;
       font-size: 6.5rem;
+      text-align: center;
     }
     .hero__center_btn {
       background-color: #13ac8e;
+      text-align: center;
       width: fit-content;
       padding: 15px 20px;
       border-radius: 50px;
@@ -344,6 +346,9 @@ body {
             }
           }
         }
+      }
+      .map__right > * {
+        width: 100%;
       }
     }
   }
@@ -660,6 +665,7 @@ footer {
   background-color: #f9f8f6;
   font-family: $primary-font;
   min-height: 100vh;
+  padding-bottom: 20px;
   .contact-title {
     text-align: center;
     font-family: $secondary-font;
@@ -668,10 +674,18 @@ footer {
   .form-contact {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 20px;
     width: 100%;
-    label {
-      font-weight: bold;
-      font-size: 18px;
+    & > div {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      gap: 10px;
+      label {
+        font-weight: bold;
+        font-size: 18px;
+      }
     }
     .contact-btn {
       all: unset;
@@ -689,6 +703,31 @@ footer {
         cursor: pointer;
       }
     }
+  }
+}
+
+.not_found__main {
+  min-height: 100vh;
+  background-image: url("../images/equipage_solidaire__7.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(4px);
+}
+.not_found__hero {
+  position: absolute;
+  top: 50vh;
+  width: 100%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 18px;
+  background-color: white;
+  padding: 20px;
+  font-family: $secondary-font;
+  h1 {
+    font-family: $primary-font;
   }
 }
 
@@ -718,6 +757,20 @@ footer {
   }
 }
 
+@media screen and (max-width: 1450px) {
+  .map .map_container .map__subsection .map__left .map__left_remote {
+    flex-direction: column;
+    align-items: center;
+  }
+  .map
+    .map_container
+    .map__subsection
+    .map__left
+    .map__left_remote
+    .map__left_remote_subcontainer {
+    align-items: center;
+  }
+}
 @media screen and (max-width: 1250px) {
   .map__subsection {
     flex-direction: column;
@@ -732,7 +785,71 @@ footer {
   .navbar__link_container {
     visibility: hidden;
   }
+  .hero .hero__center .hero__center_title {
+    font-size: 4rem;
+  }
   .presentation__subcontainer {
     flex-direction: column;
+  }
+  .media__logo_subcontainer {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .hero .hero__center .hero__center_title {
+    font-size: 3.5rem;
+  }
+  .hero .hero__center .hero__center_btn {
+    font-size: 0.8rem;
+  }
+  .hero .hero__center {
+    padding-top: 100px;
+  }
+  .navbar .navbar__logo {
+    width: 50px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .footer-content {
+    .subcontainer {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+  .hero .hero__center .hero__center_title {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .help .help-container .help__subcontainer .help__btn_container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    .btn-primary {
+      width: fit-content;
+    }
+  }
+  .map
+    .map_container
+    .map__subsection
+    .map__left
+    .map__left_city_tag_container
+    > *:not(:nth-child(3)) {
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .contact_header__container .contact_header__subcontainer {
+    flex-direction: column;
+    align-items: center;
+    .contact_header__subcontainer_left {
+      flex-direction: column;
+    }
   }
 }

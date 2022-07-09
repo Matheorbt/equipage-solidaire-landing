@@ -19,11 +19,12 @@ const Contact = () => {
 
         setIsLoading(true);
 
+        // HANDLE FORM SUBMIT
         setTimeout(() => {
             setIsLoading(false);
         }, 3000);
 
-        // HANDLE FORM SUBMIT
+
     };
 
     return (
@@ -31,44 +32,49 @@ const Contact = () => {
             <HeaderContact />
             <h1 className='contact-title'>Nous contacter</h1>
             <form className='form-contact' onSubmit={handleSubmit}>
-                <label>Pôle concerné(optionel)</label>
-                <select className='contact__input' name="divisionTo" onChange={(e) => handleChange(e, "divisionTo")}>
-                    {divisionInfo.map((division, index) => (
-                        <option key={index} value={division.email}>{division.name}</option>
-                    ))}
-                </select>
-                <label>Message</label>
-                <Input
-                    placeholder="Message"
-                    name="message"
-                    type="text"
-                    handleChange={handleChange}
-                    required={false}
-                />
-                <label>Nom</label>
-                <Input
-                    placeholder="Nom"
-                    name="lastName"
-                    type="text"
-                    handleChange={handleChange}
-                    required={true}
-                />
-                <label>Prénom</label>
-                <Input
-                    placeholder="Prénom"
-                    name="name"
-                    type="text"
-                    handleChange={handleChange}
-                    required={true}
-                />
-                <label>Adresse e-mail</label>
-                <Input
-                    placeholder="Votre E-mail"
-                    name="email"
-                    type="email"
-                    handleChange={handleChange}
-                    required={true}
-                />
+                <div>
+                    <label>Pôle concerné(optionel)</label>
+                    <select className='contact__input' name="divisionTo" onChange={(e) => handleChange(e, "divisionTo")}>
+                        {divisionInfo.map((division, index) => (
+                            <option key={index} value={division.email}>{division.name}</option>
+                        ))}
+                    </select></div>
+                <div>
+                    <label>Message</label>
+                    <Input
+                        placeholder="Message"
+                        name="message"
+                        type="text"
+                        handleChange={handleChange}
+                        required={false}
+                    /></div>
+                <div>
+                    <label>Nom</label>
+                    <Input
+                        placeholder="Nom"
+                        name="lastName"
+                        type="text"
+                        handleChange={handleChange}
+                        required={true}
+                    /></div>
+                <div>
+                    <label>Prénom</label>
+                    <Input
+                        placeholder="Prénom"
+                        name="name"
+                        type="text"
+                        handleChange={handleChange}
+                        required={true}
+                    /></div>
+                <div>
+                    <label>Adresse e-mail</label>
+                    <Input
+                        placeholder="Votre E-mail"
+                        name="email"
+                        type="email"
+                        handleChange={handleChange}
+                        required={true}
+                    /></div>
                 {isLoading ? (
                     <Loader />
                 ) : (

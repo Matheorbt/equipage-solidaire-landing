@@ -30,38 +30,43 @@ const Partner = () => {
             <HeaderContact />
             <h1 className='contact-title'>Devenir partenaire</h1>
             <form className='form-contact' onSubmit={handleSubmit}>
-                <label>Message</label>
-                <Input
-                    placeholder="Message"
-                    name="message"
-                    type="text"
-                    handleChange={handleChange}
-                    required={true}
-                />
-                <label>Nom</label>
-                <Input
-                    placeholder="Nom"
-                    name="lastName"
-                    type="text"
-                    handleChange={handleChange}
-                    required={true}
-                />
-                <label>Prénom</label>
-                <Input
-                    placeholder="Prénom"
-                    name="name"
-                    type="text"
-                    handleChange={handleChange}
-                    required={true}
-                />
-                <label>E-mail</label>
-                <Input
-                    placeholder="Votre E-mail"
-                    name="email"
-                    type="email"
-                    handleChange={handleChange}
-                    required={true}
-                />
+                <div>
+                    <label>Message</label>
+                    <Input
+                        placeholder="Message"
+                        name="message"
+                        type="text"
+                        handleChange={handleChange}
+                        required={true}
+                    />
+                </div>
+                <div>
+                    <label>Nom</label>
+                    <Input
+                        placeholder="Nom"
+                        name="lastName"
+                        type="text"
+                        handleChange={handleChange}
+                        required={true}
+                    /></div>
+                <div>
+                    <label>Prénom</label>
+                    <Input
+                        placeholder="Prénom"
+                        name="name"
+                        type="text"
+                        handleChange={handleChange}
+                        required={true}
+                    /></div>
+                <div>
+                    <label>E-mail</label>
+                    <Input
+                        placeholder="Votre E-mail"
+                        name="email"
+                        type="email"
+                        handleChange={handleChange}
+                        required={true}
+                    /></div>
                 {isLoading ? (
                     <Loader />
                 ) : (

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Gallery from "react-photo-gallery";
 import { AiFillTwitterCircle, AiFillLinkedin, AiFillInstagram } from 'react-icons/ai';
 import { BsFacebook } from 'react-icons/bs';
@@ -41,9 +41,10 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
 function App() {
+  const [notif, setNotif] = useState(true);
+
   const handleDismiss = () => {
-    const notification = document.getElementById("notification_opinion");
-    notification.classList.add("hidden");
+    setNotif(false);
   };
 
   useEffect(() => {
@@ -53,7 +54,7 @@ function App() {
 
   return (
     <div>
-      <header className="google_opinions" id="notification_opinion">
+      {notif ? <header className="google_opinions" id="notification_opinion">
         <span>
           Que pensez-vous de l’Equipage Solidaire ?{" "}
           <a
@@ -67,7 +68,7 @@ function App() {
         <button onClick={() => handleDismiss()}>
           <i className="fa fa-times" aria-hidden="true"></i>
         </button>
-      </header>
+      </header> : null}
       <nav className="navbar">
         <img
           className="navbar__logo"
@@ -161,17 +162,12 @@ function App() {
             <div className="carousel__container">
               <Swiper
                 modules={[Pagination, A11y]}
-                spaceBetween={100}
-                slidesPerView={4}
+                spaceBetween={20}
+                slidesPerView={1}
                 loop={true}
                 pagination={{ clickable: true }}
                 onSwiper={(swiper) => console.log(swiper)}
-                onSlideChange={() => console.log("slide change")}
                 breakpoints={{
-                  640: {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
-                  },
                   768: {
                     slidesPerView: 2,
                     spaceBetween: 40,
@@ -363,7 +359,6 @@ function App() {
                 loop={true}
                 pagination={{ clickable: true }}
                 onSwiper={(swiper) => console.log(swiper)}
-                onSlideChange={() => console.log("slide change")}
               >
                 <SwiperSlide>
                   <Opinion
