@@ -9,6 +9,7 @@
 
 body {
   scroll-behavior: smooth;
+  overflow-y: scroll;
   overflow-x: hidden;
 }
 
@@ -58,6 +59,7 @@ body {
 }
 
 .navbar {
+  overflow-x: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -234,7 +236,7 @@ body {
 .projects .projects_container .carousel__container .swiper {
   position: relative;
   width: 100%;
-  height: 50vh;
+  padding: 20px 0 20px 0px;
 }
 
 .projects .projects_container .carousel__container {
@@ -647,7 +649,7 @@ body {
 
 .opinion .carousel__container .swiper {
   width: 100%;
-  height: 50vh;
+  padding: 50px 0 50px 0px;
   position: relative;
 }
 
@@ -1210,6 +1212,14 @@ footer .ocean .wave {
   }
   .hero .hero__center .hero__center_title {
     font-size: 3rem;
+  }
+  .map
+.map_container
+.map__subsection
+.map__left
+.map__left_remote
+.map__left_remote_bg {
+    min-height: 300px;
   }
 }
 
