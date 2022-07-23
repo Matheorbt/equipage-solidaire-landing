@@ -2,10 +2,13 @@ import React, { useState } from 'react'
 import Input from './Components/Input'
 import Loader from "./Components/Loader"
 import HeaderContact from './Components/ContactHeader'
+const axios = require("axios");
 
 const Partner = () => {
+    const sendURL = "https://api.emailjs.com/api/v1.0/email/send";
     const [isLoading, setIsLoading] = useState(false);
     const [formData, setformData] = useState({ message: "", name: "", lastName: "", email: "" });
+
     const handleChange = (e, name) => {
         setformData((prevState) => ({ ...prevState, [name]: e.target.value }));
     };
@@ -17,19 +20,45 @@ const Partner = () => {
         if (!message || !name || !lastName || !email) return;
 
         setIsLoading(true);
+        sendEmail(e);
 
-        setTimeout(() => {
-            setIsLoading(false);
-        }, 3000);
-
-        // HANDLE FORM SUBMIT
+        setIsLoading(false);
     };
+
+    const sendEmail = async (e) => {
+        await axios({
+            method: "POST",
+            url: sendURL,
+            data: {
+                service_id: "service_" + process.env.REACT_APP_SERVICE_KEY,
+                template_id: "template_" + process.env.REACT_APP_TEMPLATE_PARTNER_KEY,
+                user_id: "user_" + process.env.REACT_APP_USER_KEY,
+                template_params: {
+                    'message': formData.message,
+                    'name': formData.name,
+                    'lastName': formData.lastName,
+                    'email': formData.email,
+                }
+            },
+            contentType: 'application/json'
+        }).then(
+            function (response) {
+                window.alert("Merci ta demande a bien été prise en compte ! 👍");
+            },
+            function (error) {
+                window.alert(
+                    "Un problème est survenu, merci de réessayer ultérieurement, si le problème persiste merci de nous contacter à : equipagesolidaire@gmail.com"
+                );
+                console.log("mailjs error : " + error.toString());
+            }
+        );
+    }
 
     return (
         <main className='contact-main'>
             <HeaderContact />
             <h1 className='contact-title'>Devenir partenaire</h1>
-            <form className='form-contact' onSubmit={handleSubmit}>
+            <form className='form-contact' onSubmit={handleSubmit} id="partnerForm">
                 <div>
                     <label>Message</label>
                     <Input

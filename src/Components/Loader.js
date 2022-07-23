@@ -4,7 +4,7 @@ import { TailSpin } from "react-loader-spinner";
 
 const Loader = () => {
     return (
-        <div>
+        <div className="loader-container">
             <TailSpin
                 color="#00a6ff"
                 height={75}

@@ -3,29 +3,60 @@ import Input from './Components/Input'
 import divisionInfo from "./divisionContact"
 import Loader from "./Components/Loader"
 import HeaderContact from './Components/ContactHeader'
+const axios = require("axios");
 
 const Contact = () => {
+    const sendURL = "https://api.emailjs.com/api/v1.0/email/send";
     const [isLoading, setIsLoading] = useState(false);
     const [formData, setformData] = useState({ divisionTo: "", message: "", name: "", lastName: "", email: "" });
+
     const handleChange = (e, name) => {
         setformData((prevState) => ({ ...prevState, [name]: e.target.value }));
+        console.log(e.target.value);
     };
 
     const handleSubmit = (e) => {
-        const { divisionTo, message, name, lastName, email } = formData;
+        const { message, name, lastName, email } = formData;
 
         e.preventDefault();
-        if (!divisionTo || !message || !name || !lastName || !email) return;
+        if (!message || !name || !lastName || !email) return;
 
         setIsLoading(true);
+        console.log(formData.divisionTo);
+        sendEmail(e);
 
-        // HANDLE FORM SUBMIT
-        setTimeout(() => {
-            setIsLoading(false);
-        }, 3000);
-
-
+        setIsLoading(false);
     };
+
+    const sendEmail = async (e) => {
+        await axios({
+            method: "POST",
+            url: sendURL,
+            data: {
+                service_id: "service_" + process.env.REACT_APP_SERVICE_KEY,
+                template_id: "template_" + process.env.REACT_APP_TEMPLATE_CONTACT_KEY,
+                user_id: "user_" + process.env.REACT_APP_USER_KEY,
+                template_params: {
+                    'divisionTo': formData.divisionTo,
+                    'message': formData.message,
+                    'name': formData.name,
+                    'lastName': formData.lastName,
+                    'email': formData.email,
+                }
+            },
+            contentType: 'application/json'
+        }).then(
+            function (response) {
+                window.alert("Merci ta demande a bien été prise en compte ! 👍");
+            },
+            function (error) {
+                window.alert(
+                    "Un problème est survenu, merci de réessayer ultérieurement, si le problème persiste merci de nous contacter à : equipagesolidaire@gmail.com"
+                );
+                console.log("mailjs error : " + error.toString());
+            }
+        );
+    }
 
     return (
         <main className='contact-main'>
@@ -34,7 +65,7 @@ const Contact = () => {
             <form className='form-contact' onSubmit={handleSubmit}>
                 <div>
                     <label>Pôle concerné(optionel)</label>
-                    <select className='contact__input' name="divisionTo" onChange={(e) => handleChange(e, "divisionTo")}>
+                    <select value={formData.divisionTo} className='contact__input' name="divisionTo" onChange={(e) => handleChange(e, "divisionTo")}>
                         {divisionInfo.map((division, index) => (
                             <option key={index} value={division.email}>{division.name}</option>
                         ))}

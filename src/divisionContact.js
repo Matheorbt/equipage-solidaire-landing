@@ -1,11 +1,11 @@
 const divisionInfo = [
     {
         "name": "Aucun pôle spécifié",
-        "email": "e"
+        "email": "matho.robert@gmail.com"
     },
     {
         "name": "Partenariat",
-        "email": "ee"
+        "email": "matheo.rbt.pro@gmail.com"
     },
     {
         "name": "Marketing - Communication",
