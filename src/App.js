@@ -21,12 +21,14 @@ import {
   Franprix,
   Letudiant,
   FondationCarrefour,
-  Mediavenir,
   Pepsico,
-  Phenyx,
   Nexity,
   FondationBoulanger,
-  BanqueDeFrance
+  BanqueDeFrance,
+  Paris,
+  Montreuil,
+  MarcheAuxAffaires,
+  FondationCognacJay
 } from "./images/media_logo/index";
 
 import { photos } from "./images/photos";
@@ -193,7 +195,7 @@ function App() {
                     slidesPerView: 3,
                     spaceBetween: 50,
                   },
-                  1408: {
+                  1824: {
                     slidesPerView: 4,
                     spaceBetween: 100,
                   },
@@ -313,6 +315,13 @@ function App() {
                 alt="media logo"
               />
               <img
+                id="pepsico_logo"
+                width='200'
+                className="media__logo_item"
+                src={FondationCognacJay}
+                alt="media logo"
+              />
+              <img
                 id="nexity_logo"
                 width='125'
                 className="media__logo_item"
@@ -333,29 +342,50 @@ function App() {
                 width='200'
                 alt="media logo"
               />
+              <img
+                id="fondation_logo"
+                className="media__logo_item"
+                src={MarcheAuxAffaires}
+                width='200'
+                alt="media logo"
+              />
             </div>
             {/* Medias */}
             <h1 className="media__title">Ils parlent de nous</h1>
             <div className="media__logo_subcontainer">
               <img
                 id="phenyx_logo"
-                width='200'
+                width='160'
                 className="media__logo_item"
                 src={FondationBoulanger}
+                alt="media logo"
+              />
+              <img
+                id="phenyx_logo"
+                width='120'
+                className="media__logo_item"
+                src={Paris}
                 alt="media logo"
               />
               <Brut />
               <FranceTrois />
               <img
+                id="phenyx_logo"
+                width='120'
+                className="media__logo_item"
+                src={Montreuil}
+                alt="media logo"
+              />
+              <img
                 id="mediavenir_logo"
-                width='250'
+                width='200'
                 className="media__logo_item"
                 src={BanqueDeFrance}
                 alt="media logo"
               />
               <img
                 id="letudiant_logo"
-                width='150'
+                width='120'
                 className="media__logo_item"
                 src={Letudiant}
                 alt="media logo"
@@ -367,7 +397,7 @@ function App() {
         {/* Beneficiaries opinions */}
         <section className="opinion">
           <div className="opinion-container">
-            <span className="title"><h1 className="opinion__title">Parole de bénéficiaire</h1><a href="https://www.google.com/maps/place/Equipage+Solidaire/@48.8787571,2.3478811,17z/data=!4m7!3m6!1s0x47e66f1f40e138f7:0xcd753d46fcb4d891!8m2!3d48.8787571!4d2.3478811!9m1!1b1" target="_blank" rel="noreferrer">Découvrir tous les avis !</a></span>
+            <span className="title"><h1 className="opinion__title">Parole de bénéficiaire</h1><a className='btn-primary' href="https://www.google.com/maps/place/Equipage+Solidaire/@48.8787571,2.3478811,17z/data=!4m7!3m6!1s0x47e66f1f40e138f7:0xcd753d46fcb4d891!8m2!3d48.8787571!4d2.3478811!9m1!1b1" target="_blank" rel="noreferrer">Découvrir tous les avis</a></span>
             <div className="carousel__container">
               <Swiper
                 modules={[Pagination, A11y, Autoplay]}
