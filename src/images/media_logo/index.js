@@ -5,3 +5,5 @@ export const Mediavenir = require("./Mediavenir_logo.png");
 export const Pepsico = require("./pepsico-og-logo.jpg");
 export const Phenyx = require("./Phenyx_logo.png");
 export const Nexity = require("./logo-nexity-1200.png");
+export const FondationBoulanger = require("./logo_fondation_boulanger.jpg");
+export const BanqueDeFrance = require("./Banque_de_France_Logo.png");

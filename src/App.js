@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import Gallery from "react-photo-gallery";
 import { AiFillTwitterCircle, AiFillLinkedin, AiFillInstagram } from 'react-icons/ai';
 import { BsFacebook } from 'react-icons/bs';
+import { Link } from "react-router-dom";
 import Remote from './images/undraw_working_remotely'
+
 import {
   LogoDelivraide,
   PictureOne,
@@ -11,6 +13,7 @@ import {
   InformaticOperation,
   LogoColored,
   StudentDiscord,
+  Maraudes,
   Map,
 } from "./images/index";
 
@@ -22,6 +25,8 @@ import {
   Pepsico,
   Phenyx,
   Nexity,
+  FondationBoulanger,
+  BanqueDeFrance
 } from "./images/media_logo/index";
 
 import { photos } from "./images/photos";
@@ -117,41 +122,53 @@ function App() {
         <article className="presentation">
           <h1 className="presentation__title">Qui somme-nous ?</h1>
           <div className="presentation__subcontainer">
-            <p className="presentation__subcontainer_paragraph">
-              Née du travail et de l'enthousiasme de 5 jeunes, l'Équipage
-              Solidaire est une association de 67 membres, à l’origine de la
-              plateforme de livraison gratuite Delivr'aide, venant en aide aux
-              étudiants en situation de précarité par la livraison de paniers
-              repas constitués d’invendus alimentaires et de produits de
-              premières nécessités. L'association poursuit chaque jour son
-              objectif de mise en place d'un réseau d'entraide, physique et
-              virtuel, au niveau national, entre tout type de personne dans le
-              besoin. Notamment à travers le développement quotidien d'un Drive
-              libre, regroupant des cours accessibles gratuitement et en
-              permanence, mais aussi la livraison hebdomadaire d’invendus, de
-              denrées alimentaires, et de produits de première nécessité toutes
-              les semaines à travers la plateforme Delivr’aide, ou encore
-              l'organisation de maraudes et d'action de sensibilisation
-              environnementale tel que des clean-walks ou des interventions dans
-              les collèges/lycées. Entraide, cohésion et fraternité sont autant
-              de principes guidant, chaque jour, la réalisation de chacune de
-              nos actions et nous permettant de croire en un avenir meilleur.
-            </p>
             <div className="presentation__subcontainer_left">
+              <p className="presentation__subcontainer_paragraph">
+                Née du travail et de l'enthousiasme de 5 jeunes, l'Équipage
+                Solidaire est une association de 67 membres, à l’origine de la
+                plateforme de livraison gratuite Delivr'aide, venant en aide aux
+                étudiants en situation de précarité par la livraison de paniers
+                repas constitués d’invendus alimentaires et de produits de
+                premières nécessités. L'association poursuit chaque jour son
+                objectif de mise en place d'un réseau d'entraide, physique et
+                virtuel, au niveau national, entre tout type de personne dans le
+                besoin. Notamment à travers le développement quotidien d'un Drive
+                libre, regroupant des cours accessibles gratuitement et en
+                permanence, mais aussi la livraison hebdomadaire d’invendus, de
+                denrées alimentaires, et de produits de première nécessité toutes
+                les semaines à travers la plateforme Delivr’aide, ou encore
+                l'organisation de maraudes et d'action de sensibilisation
+                environnementale tel que des clean-walks ou des interventions dans
+                les collèges/lycées. Entraide, cohésion et fraternité sont autant
+                de principes guidant, chaque jour, la réalisation de chacune de
+                nos actions et nous permettant de croire en un avenir meilleur.
+              </p>
+              <div className="btn_container">
+                <Link to="/presentationequipe" className="btn-primary">Découvrir l'équipe</Link>
+                <a
+                  className="btn-primary"
+                  href="https://drive.google.com/file/d/1AkFPf-PFVvvNx8fJNPjsh3Ah77PHvOSr/view?usp=sharing"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Découvrez notre rapport d'activité
+                </a>
+                <a
+                  className="btn-primary"
+                  href="https://deli-wiki.netlify.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Découvrez notre histoire
+                </a>
+              </div>
+            </div>
+            <div className="presentation__subcontainer_right">
               <img
                 className="presentation__subcontainer_left_logo"
                 src={LogoColored}
                 alt="Logo equipage solidaire"
               />
-              <a
-                className="presentation__subcontainer_left_link"
-                href="https://deli-wiki.netlify.app/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Découvrez notre histoire
-                <i className="fa fa-chevron-right" aria-hidden="true"></i>
-              </a>
             </div>
           </div>
         </article>
@@ -218,7 +235,7 @@ function App() {
                 <SwiperSlide>
                   <ProjectCard
                     tags="SOLIDARITÉ"
-                    logo={StudentDiscord}
+                    logo={Maraudes}
                     name="Maraudes"
                     description="Relai numériques au service de l’orientation et de la
                         formation pour jeunes."
@@ -322,18 +339,18 @@ function App() {
             <div className="media__logo_subcontainer">
               <img
                 id="phenyx_logo"
-                width='125'
+                width='200'
                 className="media__logo_item"
-                src={Phenyx}
+                src={FondationBoulanger}
                 alt="media logo"
               />
               <Brut />
               <FranceTrois />
               <img
                 id="mediavenir_logo"
-                width='125'
+                width='250'
                 className="media__logo_item"
-                src={Mediavenir}
+                src={BanqueDeFrance}
                 alt="media logo"
               />
               <img
@@ -350,7 +367,7 @@ function App() {
         {/* Beneficiaries opinions */}
         <section className="opinion">
           <div className="opinion-container">
-            <h1 className="opinion__title">Parole de bénéficiaire</h1>
+            <span className="title"><h1 className="opinion__title">Parole de bénéficiaire</h1><a href="https://www.google.com/maps/place/Equipage+Solidaire/@48.8787571,2.3478811,17z/data=!4m7!3m6!1s0x47e66f1f40e138f7:0xcd753d46fcb4d891!8m2!3d48.8787571!4d2.3478811!9m1!1b1" target="_blank" rel="noreferrer">Découvrir tous les avis !</a></span>
             <div className="carousel__container">
               <Swiper
                 modules={[Pagination, A11y, Autoplay]}
@@ -362,25 +379,46 @@ function App() {
               >
                 <SwiperSlide>
                   <Opinion
-                    text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-        doloribus sequi repudiandae. Cupiditate nemo, molestiae quis minus
-        possimus laboriosam repellat molestias odio laborum officia nulla vitae
-        minima non quibusdam. Reiciendis."
+                    text="Équipe super sympa ! Livraison bien reçue avec pleins de produits !! Au top je recommande 🦾"
                     project="Delivr'aide"
                     role="Bénéficiaire du projet"
-                    name="Tim"
+                    name="Jeanne Pcq"
                     profile={PictureOne}
                   />
                 </SwiperSlide>
                 <SwiperSlide>
                   <Opinion
-                    text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-        doloribus sequi repudiandae. Cupiditate nemo, molestiae quis minus
-        possimus laboriosam repellat molestias odio laborum officia nulla vitae
-        minima non quibusdam. Reiciendis."
+                    text="Bonjour, je viens de recevoir mon kit et franchement grand merci! Y' a tellement de trucs, je suis choqué, même des soins hygiène et tout 🙏🏻 Merci beaucoup pour tout ce que vous faites. J'espère pouvoir vous accompagner lors de prochaines actions."
                     project="Delivr'aide"
                     role="Bénéficiaire du projet"
-                    name="Sarah"
+                    name="Abdou Mrehouri"
+                    profile={PictureTwo}
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <Opinion
+                    text="Très belle initiative,  j'ai reçu un panier aujourd'hui bien rempli.  Je suis très heureuse ! Merci beaucoup à vous"
+                    project="Delivr'aide"
+                    role="Bénéficiaire du projet"
+                    name="Sarr Stephanie Bohe"
+                    profile={PictureTwo}
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <Opinion
+                    text="Un grand merci à l’équipe . Une très chaleureuse équipe j’ai été accueillie afin de récupéré mon kit avec tellement de joie Merci pour tout ce que vous faites pour nous ❤️❤️❤️"
+                    project="Delivr'aide"
+                    role="Bénéficiaire du projet"
+                    name="Fatim Soumahoro"
+                    profile={PictureTwo}
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <Opinion
+                    text="Merci pour votre générosité, équipe sympa, disponible, des colis  au top livrés avec amour merci je vais me régaler. "
+                    project="Delivr'aide"
+                    role="Bénéficiaire du projet"
+                    name="Mbene Toure"
                     profile={PictureTwo}
                   />
                 </SwiperSlide>
@@ -401,7 +439,7 @@ function App() {
               </p>
               <div className="help__btn_container">
                 <a
-                  href="https://linktr.ee/equipagesolidaire"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSfSWwXNUGmKPn1fJ3eAOqNP_JEVkoY-LezpyOLniUQLVMG9Rw/viewform"
                   rel="noreferrer"
                   className="btn-primary"
                   target="_blank"
@@ -409,7 +447,7 @@ function App() {
                   Don en nature
                 </a>
                 <a
-                  href="https://linktr.ee/equipagesolidaire"
+                  href="https://www.helloasso.com/associations/l-equipage-solidaire/formulaires/2/widget"
                   rel="noreferrer"
                   className="btn-primary"
                   target="_blank"

@@ -134,6 +134,10 @@ body {
     display: flex;
     gap: 50px;
     align-items: center;
+    .presentation__subcontainer_left_logo {
+      min-width: 300px;
+      width: 15vw;
+    }
     .presentation__subcontainer_paragraph {
       font-family: $secondary-font;
       color: #616161;
@@ -142,14 +146,11 @@ body {
     .presentation__subcontainer_left {
       display: flex;
       flex-direction: column;
-      gap: 20px;
-      .presentation__subcontainer_left_logo {
-        min-width: 300px;
-        width: 15vw;
-      }
-      .presentation__subcontainer_left_link {
-        text-align: center;
-        font-family: $secondary-font;
+      gap: 40px;
+      .btn_container {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
       }
     }
   }
@@ -180,6 +181,7 @@ body {
       align-items: center;
       width: 100%;
       .projects__list_card {
+        min-height: 420px;
         margin: 10px 0 0 10px;
         transition: all 0.25s ease-in-out;
         box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
@@ -196,6 +198,7 @@ body {
         .projects__list_card_img {
           border-radius: 25px 25px 0 0;
           width: 350px;
+          max-height: 175px;
         }
         .projects__list_card_subcontainer {
           padding: 20px 0 20px 0;
@@ -410,6 +413,18 @@ body {
   .opinion-container {
     width: 95%;
     margin: 0 auto;
+    hr {
+      width: 50%;
+      background-color: #e6e7eb;
+    }
+    .title {
+      display: flex;
+      flex-direction: column;
+      a {
+        font-style: italic;
+        font-family: $primary-font;
+      }
+    }
   }
   .opinion__title {
     font-size: $title-size;
@@ -449,6 +464,7 @@ body {
           height: 100%;
           gap: 20px;
           .opnion__paragraph {
+            text-align: center;
             font-size: 1.5rem;
             width: 80%;
           }
@@ -739,6 +755,12 @@ footer {
   align-items: center;
 }
 
+.team_image {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .wave:nth-of-type(2) {
   top: -175px;
   animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite,
@@ -828,6 +850,9 @@ footer {
       gap: 10px;
     }
   }
+  .team_image {
+    width: 100%;
+  }
   .hero .hero__center .hero__center_title {
     font-size: 3rem;
   }
@@ -843,6 +868,17 @@ footer {
 
 @media screen and (max-width: 550px) {
   .help .help-container .help__subcontainer .help__btn_container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    .btn-primary {
+      width: fit-content;
+    }
+  }
+  .presentation
+    .presentation__subcontainer
+    .presentation__subcontainer_left
+    .btn_container {
     flex-direction: column;
     align-items: center;
     gap: 20px;

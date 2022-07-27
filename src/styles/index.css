@@ -183,6 +183,11 @@ body {
           align-items: center;
 }
 
+.presentation .presentation__subcontainer .presentation__subcontainer_left_logo {
+  min-width: 300px;
+  width: 15vw;
+}
+
 .presentation .presentation__subcontainer .presentation__subcontainer_paragraph {
   font-family: "Roboto";
   color: #616161;
@@ -197,17 +202,16 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 20px;
+  gap: 40px;
 }
 
-.presentation .presentation__subcontainer .presentation__subcontainer_left .presentation__subcontainer_left_logo {
-  min-width: 300px;
-  width: 15vw;
-}
-
-.presentation .presentation__subcontainer .presentation__subcontainer_left .presentation__subcontainer_left_link {
-  text-align: center;
-  font-family: "Roboto";
+.presentation .presentation__subcontainer .presentation__subcontainer_left .btn_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .projects {
@@ -253,6 +257,7 @@ body {
 }
 
 .projects .projects_container .carousel__container .projects__list_card {
+  min-height: 420px;
   margin: 10px 0 0 10px;
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
@@ -282,6 +287,7 @@ body {
 .projects .projects_container .carousel__container .projects__list_card .projects__list_card_img {
   border-radius: 25px 25px 0 0;
   width: 350px;
+  max-height: 175px;
 }
 
 .projects .projects_container .carousel__container .projects__list_card .projects__list_card_subcontainer {
@@ -612,6 +618,26 @@ body {
   margin: 0 auto;
 }
 
+.opinion .opinion-container hr {
+  width: 50%;
+  background-color: #e6e7eb;
+}
+
+.opinion .opinion-container .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.opinion .opinion-container .title a {
+  font-style: italic;
+  font-family: "Poppins";
+}
+
 .opinion .opinion__title {
   font-size: 3rem;
   font-family: "Poppins";
@@ -670,6 +696,7 @@ body {
 }
 
 .opinion .swiper .swiper-wrapper .swiper-slide .opinion__container .opnion__paragraph {
+  text-align: center;
   font-size: 1.5rem;
   width: 80%;
 }
@@ -1083,6 +1110,12 @@ footer .ocean .wave {
           align-items: center;
 }
 
+.team_image {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .wave:nth-of-type(2) {
   top: -175px;
   -webkit-animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite, swell 7s ease -1.25s infinite;
@@ -1217,6 +1250,9 @@ footer .ocean .wave {
             align-items: center;
     gap: 10px;
   }
+  .team_image {
+    width: 100%;
+  }
   .hero .hero__center .hero__center_title {
     font-size: 3rem;
   }
@@ -1242,6 +1278,27 @@ footer .ocean .wave {
     gap: 20px;
   }
   .help .help-container .help__subcontainer .help__btn_container .btn-primary {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .presentation
+.presentation__subcontainer
+.presentation__subcontainer_left
+.btn_container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 20px;
+  }
+  .presentation
+.presentation__subcontainer
+.presentation__subcontainer_left
+.btn_container .btn-primary {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;

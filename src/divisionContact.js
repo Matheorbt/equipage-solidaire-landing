@@ -1,27 +1,27 @@
 const divisionInfo = [
     {
         "name": "Aucun pôle spécifié",
-        "email": "matho.robert@gmail.com"
+        "email": "equipagesolidaire@gmail.com"
     },
     {
         "name": "Partenariat",
-        "email": "matheo.rbt.pro@gmail.com"
+        "email": "partenariat@delivraide.org"
     },
     {
         "name": "Marketing - Communication",
-        "email": "e"
+        "email": "equipagesolidaire@gmail.com"
     },
     {
         "name": "Ressource Humaine",
-        "email": "e"
+        "email": "equipagesolidaire@gmail.com"
     },
     {
         "name": "Logistique",
-        "email": "e"
+        "email": "equipagesolidaire@gmail.com"
     },
     {
         "name": "Dev",
-        "email": "e"
+        "email": "dev@delivraide.org"
     },
 ]
 
