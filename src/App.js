@@ -303,7 +303,7 @@ function App() {
         <section className="media" id="partner">
           <div className="media__logo_container">
             {/* Partners */}
-            <h1 className="media__title">Nos partenaires</h1>
+            <h1 className="media__title">Ils nous soutiennent</h1>
             <div className="media__logo_subcontainer">
               <img
                 id="pepsico_logo"

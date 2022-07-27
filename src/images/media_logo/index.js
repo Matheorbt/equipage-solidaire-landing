@@ -7,3 +7,7 @@ export const Phenyx = require("./Phenyx_logo.png");
 export const Nexity = require("./logo-nexity-1200.png");
 export const FondationBoulanger = require("./logo_fondation_boulanger.jpg");
 export const BanqueDeFrance = require("./Banque_de_France_Logo.png");
+export const Paris = require("./ville_de_paris_logo.png");
+export const Montreuil = require("./ville_de_montreuil.png");
+export const MarcheAuxAffaires = require("./marche_aux_affaires.png");
+export const FondationCognacJay = require("./Banque_de_France_Logo.png");
