@@ -508,16 +508,10 @@ function App() {
                 className="btn-primary"
                 target="_blank"
               >
-                <i className="fa-solid fa-link"></i> Linktree
+                <i className="fa-solid fa-link"></i> En savoir plus
               </a>
-              <a
-                href="https://linktr.ee/equipagesolidaire"
-                rel="noreferrer"
-                className="btn-primary"
-                target="_blank"
-              >
-                <i className="fa-solid fa-link"></i> Nous contacter
-              </a>
+              <Link className="btn-primary" to="/contact"><i class="fas fa-envelope    "></i> Nous contacter</Link>
+              <Link className="btn-primary" to="/devenirpartenaire"><i class="fas fa-hands-helping    "></i> Devenir partenaire</Link>
               <ul className="left-link-list">
                 <li>
                   <a
